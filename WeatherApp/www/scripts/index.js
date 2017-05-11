@@ -8,7 +8,7 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        $('#get-weather-btn').click();
+        $('#get-weather-btn').click(set);
     };
 
     function onPause() {
