@@ -1,12 +1,13 @@
 ﻿
 function SetUsername() {
-    var username = document.getElementById(username);
-    var password = document.getElementById(password);
- 
+    
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var size = password.length;
     
 
     $.ajax({
-        url: '"http://y0547387610-001-site1.ctempurl.com/Members/" + username + "/" + password',
+        url: "http://y0547387610-001-site1.ctempurl.com/Members/" + username + "/" + password,
     });
 
     //function UserAction() {
