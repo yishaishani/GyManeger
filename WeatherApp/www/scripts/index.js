@@ -8,7 +8,8 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        $('#get-weather-btn').click(SetUsername);
+        $('#logIn').click(SetUsername);
+        $('#btn_insertCoaches').click(setCoaches);
     };
 
     function onPause() {
