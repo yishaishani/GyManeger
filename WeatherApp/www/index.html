@@ -21,22 +21,17 @@
 <div data-role="page" id="one">
 
 	<div data-role="header">
-		<h1>Multi-page</h1>
+		<h1>GYManager</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<h2>One</h2>
+		<h2>wellcome</h2>
 
-        <form>
-            <label for="zip-code">Enter your name and password:</label>
-            <input type="text" placeholder="Username" id="username">
-            <input type="password" placeholder="password" id="password">
-            <br /><br /><br /><br />
-            <button id="logIn" class="button" onclick="SetUsername()">log - in</button>
-
-        </form>
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
+        
+		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">COACHES</a></p>
+        <p><a href="#sign-in" class="ui-btn ui-shadow ui-corner-all">MEMBERS</a></p>
+        <p><a href="#log-in" class="ui-btn ui-shadow ui-corner-all">NEW MEMBERS</a></p>
+		<!--<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>-->
 	</div><!-- /content -->
 
 	<div data-role="footer" data-theme="a">
@@ -67,6 +62,44 @@
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
 </div><!-- /page two -->
+
+    <!-- Start of log-in page: #log-in -->
+    <div data-role="page" id="log-in" data-theme="a">
+
+        <div data-role="header">
+            <h1>log-in</h1>
+        </div><!-- /header -->
+
+        <form>
+            <label for="zip-code">Enter your name and password:</label>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="password" id="password">
+            <br /><br /><br /><br />
+            <button id="logIn" class="button" onclick="SetUsername()">log - in</button>
+
+        </form>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page log-in -->
+
+    <!-- Start of second page: #sign-in -->
+    <div data-role="page" id="sign-in" data-theme="a">
+
+        <div data-role="header">
+            <h1>sign-in</h1>
+        </div><!-- /header -->
+
+        <form>
+            <div id="menu">menu:</div>
+           
+        </form>
+
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page sign-in -->
 
 <!-- Start of third page: #popup -->
 <div data-role="page" id="popup">
