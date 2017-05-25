@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <link rel="stylesheet" type="text/css" href="css/StyleSheet1.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:
+        http://api.openweathermap.org https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>log in page</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="scripts/jquery-3.1.1.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="scripts/SetUsername.js"></script>
+    <script type="text/javascript" src="scripts/setCoaches.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    </head>
+<body>
+   
+
+
+        <div  data-role="page" id="index" class="ui-content">
+
+            <div data-role="header" class="header">
+                <h1 id="app-title">log in page</h1>
+                <button id="home" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</button>
+
+            </div>
+
+            <div data-role="oontent" >
+                <form>
+                    <label for="zip-code">Enter your name and password:</label>
+                    <input type="text" placeholder="Username" id="username">
+                    <input type="password" placeholder="password" id="password">
+                    <br /><br /><br /><br />
+                    <button id="logIn" class="button">log - in</button>
+
+                </form>
+            </div>
+
+        
+        </div>
+
+        <div  data-role="page" name="displayDiv"  id="Coaches" class="ui-content">
+            
+        </div>
+
+
+
+
+
+    
+   
+</body>
+</html>
