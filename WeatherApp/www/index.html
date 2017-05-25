@@ -17,8 +17,8 @@
 
 <body>
 
-<!-- Start of first page: #one -->
-<div data-role="page" id="one">
+<!-- Start of mian page: #main -->
+<div data-role="page" id="main">
 
 	<div data-role="header">
 		<h1>GYManager</h1>
@@ -28,8 +28,8 @@
 		<h2>wellcome</h2>
 
         
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">COACHES</a></p>
         <p><a href="#sign-in" class="ui-btn ui-shadow ui-corner-all">MEMBERS</a></p>
+		<p><a href="#log-in-coaches" class="ui-btn ui-shadow ui-corner-all">NEW COACHES</a></p>
         <p><a href="#log-in" class="ui-btn ui-shadow ui-corner-all">NEW MEMBERS</a></p>
 		<!--<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>-->
 	</div><!-- /content -->
@@ -37,13 +37,13 @@
 	<div data-role="footer" data-theme="a">
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
-</div><!-- /page one -->
+</div><!-- /page main -->
 
-<!-- Start of second page: #two -->
-<div data-role="page" id="two" data-theme="a">
+<!-- Start of log-in-coaches page: #log-in-coaches -->
+<div data-role="page" id="log-in-coaches" data-theme="a">
 
 	<div data-role="header">
-		<h1>Two</h1>
+		<h1>log-in-coaches</h1>
 	</div><!-- /header -->
 
     <form>
@@ -59,9 +59,9 @@
     </form>
 
 	<div data-role="footer">
-		<h4>Page Footer</h4>
+		<h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
 	</div><!-- /footer -->
-</div><!-- /page two -->
+</div><!-- /page log-in-coaches -->
 
     <!-- Start of log-in page: #log-in -->
     <div data-role="page" id="log-in" data-theme="a">
@@ -80,11 +80,11 @@
         </form>
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page log-in -->
 
-    <!-- Start of second page: #sign-in -->
+    <!-- Start of sign-in page: #sign-in -->
     <div data-role="page" id="sign-in" data-theme="a">
 
         <div data-role="header">
@@ -95,9 +95,12 @@
             <div id="menu">menu:</div>
            
         </form>
+        
+        <button type="button" id="btn_GetMembers" class="button" onclick="getMembers()">get all members</button>
+        <div id="getMembers"></div>
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page sign-in -->
 
@@ -115,7 +118,7 @@
 	</div><!-- /content -->
 
 	<div data-role="footer">
-		<h4>Page Footer</h4>
+		<h4><p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page "one"</a></p></h4>
 	</div><!-- /footer -->
 </div><!-- /page popup -->
 

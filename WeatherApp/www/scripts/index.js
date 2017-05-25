@@ -1,6 +1,6 @@
 (function( $, undefined ) {
 	//special click handling to make widget work remove after nav changes in 1.4
-	var href,
+    var href,
 		ele = "";
 	$( document ).on( "click", "a", function( e ) {
 		href = $( this ).attr( "href" );
@@ -12,7 +12,7 @@
 		}
 		ele = $( this );
 	});
-
+	
 	//$(document).on('pageinit', '#one', function () {
 	//    $('#logIn').click(SetUsername);
 	    

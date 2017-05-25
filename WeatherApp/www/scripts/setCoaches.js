@@ -10,6 +10,7 @@
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
+            window.location = "index.html"
         }
     }
            
@@ -37,7 +38,5 @@ function getCoaches() {
                         document.getElementById("getCoaches").innerHTML += data[i];
                 }
             }
-       };
-    
-        
+       };      
 }
