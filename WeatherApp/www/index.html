@@ -53,12 +53,14 @@
 
     <form>
         <label for="zip-code">Enter your details:</label>
-        <input type="text" placeholder="FirstXXXXXname" id="FirstName">
+        <input type="text" placeholder="Firstname" id="FirstName">
         <input type="text" placeholder="Lestname" id="LastName">
         <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
         <br /><br /><br /><br />
         <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">insert details</button>
 
+        <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">get all coaches</button>
+        <div id="getCoaches"></div>
     </form>
 
 	<div data-role="footer">
