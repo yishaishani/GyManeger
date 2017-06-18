@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://y0547387610-001-site1.ctempurl.com ws://localhost:35729 data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' localhost:35729 'unsafe-eval' 'unsafe-inline';">
 	<title>Multi-page template</title>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
@@ -13,6 +14,7 @@
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="scripts/SetUsername.js"></script>
     <script type="text/javascript" src="scripts/setCoaches.js"></script>
+    <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
 </head>
 
 <body>
@@ -28,10 +30,13 @@
 		<h2>wellcome</h2>
 
         
-        <p><a href="#sign-in" class="ui-btn ui-shadow ui-corner-all">MEMBERS</a></p>
-		<p><a href="#log-in-coaches" class="ui-btn ui-shadow ui-corner-all">NEW COACHES</a></p>
-        <p><a href="#log-in" class="ui-btn ui-shadow ui-corner-all">NEW MEMBERS</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">OPENING HOURS</a></p>
+        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MEMBERS</a></p>
+        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all">COACHES</a></p>
+        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MANAGER</a></p>
+		<!--<p><a href="#log-in-coaches" class="ui-btn ui-shadow ui-corner-all">NEW COACHES</a></p>
+        <p><a href="#log-in" class="ui-btn ui-shadow ui-corner-all">NEW MEMBERS</a></p>-->
+        <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">LOG-IN</a></p>
+		<p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">OPENING HOURS</a></p>
 	</div><!-- /content -->
 
 	<div data-role="footer" data-theme="a">
@@ -39,11 +44,11 @@
 	</div><!-- /footer -->
 </div><!-- /page main -->
 
-<!-- Start of log-in-coaches page: #log-in-coaches -->
-<div data-role="page" id="log-in-coaches" data-theme="a">
+<!-- Start of main-coaches page: #main-coaches -->
+<div data-role="page" id="main-coaches" data-theme="a">
 
 	<div data-role="header">
-		<h1>log-in-coaches</h1>
+		<h1>main coaches</h1>
 	</div><!-- /header -->
 
     <form>
@@ -61,34 +66,27 @@
 	<div data-role="footer">
 		<h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
 	</div><!-- /footer -->
-</div><!-- /page log-in-coaches -->
+</div><!-- /page main-coaches -->
 
-    <!-- Start of log-in page: #log-in -->
-    <div data-role="page" id="log-in" data-theme="a">
+    <!-- Start of main-members page: #main-members -->
+    <div data-role="page" id="main-members" data-theme="a">
 
         <div data-role="header">
-            <h1>log-in</h1>
+            <h1>main-members</h1>
         </div><!-- /header -->
 
-        <form>
-            <label for="zip-code">Enter your name and password:</label>
-            <input type="text" placeholder="Username" id="username">
-            <input type="password" placeholder="password" id="password">
-            <br /><br /><br /><br />
-            <button id="logIn" class="button" onclick="SetUsername()">log - in</button>
-
-        </form>
+       
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page log-in -->
+    </div><!-- /page main-members -->
 
-    <!-- Start of sign-in page: #sign-in -->
-    <div data-role="page" id="sign-in" data-theme="a">
+    <!-- Start of main-members page: #main-members -->
+    <div data-role="page" id="main-members" data-theme="a">
 
         <div data-role="header">
-            <h1>sign-in</h1>
+            <h1>main-members</h1>
         </div><!-- /header -->
 
         <form>
@@ -102,10 +100,10 @@
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page sign-in -->
+    </div><!-- /page main-members -->
 
-<!-- Start of third page: #popup -->
-<div data-role="page" id="popup">
+<!-- Start of opening-pop page: #opening-pop -->
+<div data-role="page" id="opening-pop">
 
 	<div data-role="header" data-theme="b">
 		<h1>opening hours</h1>
@@ -113,13 +111,38 @@
 
 	<div role="main" class="ui-content">
 		<h2>Popup</h2>
-	    	
-    </div><!-- /content -->
+    <!--<button type="button" id="btn_openingHours" class="button" onclick="getOpening()"> press here </button>-->
+        <div id="openingHours" ></div>
+</div><!-- /content -->
 
 	<div data-role="footer">
 		<h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
 	</div><!-- /footer -->
-</div><!-- /page popup -->
+</div><!-- /page opening-pop -->
+
+<!-- Start of log-in-pop page: #log-in-pop -->
+    <div data-role="page" id="log-in-pop">
+
+        <div data-role="header" data-theme="b">
+            <h1>log in</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter your name and password:</label>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="password" id="password">
+            <br /><br /><br /><br />
+            <button id="logIn" class="button" onclick="SetUsername()">log - in</button>
+
+        </form>
+        <div role="main" class="ui-content">
+            <h2>Popup</h2>
+
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page log-in-pop -->
 
 </body>
 </html>

@@ -10,13 +10,10 @@
   <preference name="windows-target-version" value="8.1" />
   <!-- Support for Cordova 5.0.0 plugin system -->
   <plugin name="cordova-plugin-whitelist" version="1" />
-  <allow-intent href="http://*/*" />
-  <allow-intent href="https://*/*" />
-  <allow-intent href="tel:*" />
-  <allow-intent href="sms:*" />
-  <allow-intent href="mailto:*" />
-  <allow-intent href="geo:*" />
+  <allow-intent href="*" />
   <allow-navigation href="*" />
+  <allow-navigation href="http://*/*" />
+  <access origin="*" />
   <platform name="android">
     <allow-intent href="market:*" />
   </platform>
@@ -108,4 +105,9 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280" />
   </platform>
   <preference name="AndroidLaunchMode" value="singleTop" />
+  <plugin name="cordova-plugin-device" version="1.1.6" />
+  <plugin name="cordova-plugin-file-transfer" version="1.6.3" />
+  <plugin name="cordova-plugin-network-information" version="1.3.3" />
+  <plugin name="cordova-plugin-compat" version="1.1.0" />
+  <plugin name="cordova-plugin-file" version="4.3.3" />
 </widget>

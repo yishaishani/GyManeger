@@ -21,8 +21,7 @@ function getCoaches() {
     var divCoaches = document.getElementById("getCoaches");
     
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/Coaches/all", true);
-    xhttp.send();
+    
 
        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -38,5 +37,10 @@ function getCoaches() {
                         document.getElementById("getCoaches").innerHTML += data[i];
                 }
             }
-       };      
+       };
+       xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/Coaches/all", true);
+
+       xhttp.send();
+    
+       
 }
