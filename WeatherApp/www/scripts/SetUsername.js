@@ -6,7 +6,7 @@ function SetUsername() {
  
    
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/Members/" + username + "/" + password, true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + username + "/" + password, true);
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -37,7 +37,7 @@ function getMembers() {
         }
     };
 
-    xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/Members/all", true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/all", true);
 
     xhttp.send();
 }

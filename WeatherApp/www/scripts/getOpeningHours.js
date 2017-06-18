@@ -22,7 +22,7 @@ function getOpening() {
         }
     };
 
-    xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/OpeningHours/all", true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/OpeningHours/all", true);
 
     xhttp.send();
 }
