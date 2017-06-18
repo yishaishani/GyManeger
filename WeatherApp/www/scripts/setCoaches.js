@@ -21,21 +21,14 @@ function getCoaches() {
     var divCoaches = document.getElementById("getCoaches");
     
     var xhttp = new XMLHttpRequest();
+    xhttp.responseType = "json";
     
 
        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var data = [];
-                data = this.responseText
-                var size = data.length;
-
-                document.getElementById("getCoaches").innerHTML += 'name:';
-                for (i = 0; i < size; i++) {
-                    if (data[i] == '*')
-                        document.getElementById("getCoaches").innerHTML += '\n'+'name:' ;
-                    else
-                        document.getElementById("getCoaches").innerHTML += data[i];
-                }
+              
+                var obj = $.parseJSON(this.response)
+                document.getElementById("getCoaches").innerText = obj.map(function (a) { return a.FirstName + "\n" });
             }
        };
        xhttp.open("GET", "http://y0547387610-001-site1.ctempurl.com/Coaches/all", true);
