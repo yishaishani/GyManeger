@@ -31,14 +31,12 @@
 		<h2>wellcome</h2>
 
         
-        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MEMBERS</a></p>
-        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all">COACHES</a></p>
-        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MANAGER</a></p>
-		<!--<p><a href="#log-in-coaches" class="ui-btn ui-shadow ui-corner-all">NEW COACHES</a></p>
-        <p><a href="#log-in" class="ui-btn ui-shadow ui-corner-all">NEW MEMBERS</a></p>-->
-        <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">LOG-IN</a></p>
-		<p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">OPENING HOURS</a></p>
-	</div><!-- /content -->
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MEMBERS ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">COACHES ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MANAGER ZONE</a></p>
+        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">OPENING HOURS</a></p>
+        <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all">ABOUT</a></p>
+    </div><!-- /content -->
 
 	<div data-role="footer" data-theme="a">
 		<h4>Page Footer</h4>
@@ -111,7 +109,7 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<h2>Popup</h2>
+		
     <!--<button type="button" id="btn_openingHours" class="button" onclick="getOpening()"> press here </button>-->
         <div id="openingHours" ></div>
 </div><!-- /content -->
@@ -121,6 +119,26 @@
 	</div><!-- /footer -->
 </div><!-- /page opening-pop -->
 
+    <!-- Start of about-pop page: #about-pop -->
+    <div data-role="page" id="about-pop">
+
+        <div data-role="header" data-theme="b">
+            <h1>about us</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+           
+            <div id="aboutUs">bgdsbtdsbrtfbsverfvesg
+                                    fresgbgvtrdbtrfdsbrves
+                                    frsevrdsvrsevresvrseg
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page about-pop -->
+
 <!-- Start of log-in-pop page: #log-in-pop -->
     <div data-role="page" id="log-in-pop">
 
@@ -129,21 +147,46 @@
         </div><!-- /header -->
         <form>
             <label for="zip-code">Enter your name and password:</label>
-            <input type="text" placeholder="Username" id="username">
-            <input type="password" placeholder="password" id="password">
+            <input type="text" placeholder="Username" id="usernameLOG">
+            <input type="password" placeholder="password" id="passwordLOG">
             <br /><br /><br /><br />
             <button id="logIn" class="button" onclick="SetUsername()">log - in</button>
 
         </form>
         <div role="main" class="ui-content">
-            <h2>Popup</h2>
+        
 
         </div><!-- /content -->
-
+        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MEMBERS ZONE</a></p>
+        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all">COACHES ZONE</a></p>
+        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MANAGER ZONE</a></p>
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page log-in-pop -->
+
+    <!-- Start of sign-in-pop page: #sign-in-pop -->
+    <div data-role="page" id="sign-in-pop">
+
+        <div data-role="header" data-theme="b">
+            <h1>sign in</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter your name and password:</label>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="password" id="password">
+            <br /><br /><br /><br />
+            <button id="signIn" class="button" onclick="verifyUserName()">sign - in</button>
+            <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">new members</a></p>
+        </form>
+        <div role="main" class="ui-content">
+      
+
+        </div><!-- /content -->
+         <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page sign-in-pop -->
 
 </body>
 </html>
