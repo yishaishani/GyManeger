@@ -16,6 +16,7 @@
     <script type="text/javascript" src="scripts/SetUsername.js"></script>
     <script type="text/javascript" src="scripts/setCoaches.js"></script>
     <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
+    <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
 </head>
 
 <body>
@@ -31,10 +32,10 @@
 		<h2>wellcome</h2>
 
         
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MEMBERS ZONE</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">COACHES ZONE</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MANAGER ZONE</a></p>
-        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">OPENING HOURS</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagMembers()">MEMBERS ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagCoaches()">COACHES ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagManeger()">MANAGER ZONE</a></p>
+        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpening()">OPENING HOURS</a></p>
         <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all">ABOUT</a></p>
     </div><!-- /content -->
 
@@ -43,12 +44,33 @@
 	</div><!-- /footer -->
 </div><!-- /page main -->
 
+<!-- Start of main-members page: #main-members -->
+    <div data-role="page" id="main-members" data-theme="a">
+
+        <div data-role="header">
+            <h1>main-members</h1>
+        </div><!-- /header -->
+
+        <p><a href="#mambers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDUALE</a></p>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page main-members -->
+
 <!-- Start of main-coaches page: #main-coaches -->
 <div data-role="page" id="main-coaches" data-theme="a">
 
 	<div data-role="header">
 		<h1>main coaches</h1>
 	</div><!-- /header -->
+
+    <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+    <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
+    <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDUALE</a></p>
 
     <form>
         <label for="zip-code">Enter your details:</label>
@@ -67,39 +89,29 @@
 	</div><!-- /footer -->
 </div><!-- /page main-coaches -->
 
-    <!-- Start of main-members page: #main-members -->
-    <div data-role="page" id="main-members" data-theme="a">
+<!-- Start of main-maneger page: #main-maneger -->
+    <div data-role="page" id="main-maneger" data-theme="a">
 
         <div data-role="header">
-            <h1>main-members</h1>
-        </div><!-- /header -->
-
-       
-
-        <div data-role="footer">
-            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
-        </div><!-- /footer -->
-    </div><!-- /page main-members -->
-
-    <!-- Start of main-members page: #main-members -->
-    <div data-role="page" id="main-members" data-theme="a">
-
-        <div data-role="header">
-            <h1>main-members</h1>
+            <h1>main-maneger</h1>
         </div><!-- /header -->
 
         <form>
-            <div id="menu">menu:</div>
+            
            
         </form>
         
-        <button type="button" id="btn_GetMembers" class="button" onclick="getMembers()">get all members</button>
-        <div id="getMembers"></div>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">COACHES</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MEMBERS</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">HOURS</a></p>
+
+
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page main-members -->
+    </div><!-- /page main-maneger -->
 
 <!-- Start of opening-pop page: #opening-pop -->
 <div data-role="page" id="opening-pop">
@@ -110,7 +122,6 @@
 
 	<div role="main" class="ui-content">
 		
-    <!--<button type="button" id="btn_openingHours" class="button" onclick="getOpening()"> press here </button>-->
         <div id="openingHours" ></div>
 </div><!-- /content -->
 
@@ -119,7 +130,7 @@
 	</div><!-- /footer -->
 </div><!-- /page opening-pop -->
 
-    <!-- Start of about-pop page: #about-pop -->
+<!-- Start of about-pop page: #about-pop -->
     <div data-role="page" id="about-pop">
 
         <div data-role="header" data-theme="b">
@@ -165,7 +176,7 @@
         </div><!-- /footer -->
     </div><!-- /page log-in-pop -->
 
-    <!-- Start of sign-in-pop page: #sign-in-pop -->
+<!-- Start of sign-in-pop page: #sign-in-pop -->
     <div data-role="page" id="sign-in-pop">
 
         <div data-role="header" data-theme="b">
@@ -187,6 +198,86 @@
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page sign-in-pop -->
+
+<!-- Start of mambers-info page: #mambers-info -->
+    <div data-role="page" id="mambers-info" data-theme="a">
+
+        <div data-role="header">
+            <h1>mambers info</h1>
+        </div><!-- /header -->
+        
+        <form >
+            <div  id="FirstName-members" >FIRST NAME: </div>
+            <br/>
+            <div  id="LastName-members">LAST NAME: </div>
+            <br />
+            <div id="Gender-members">GENDER: </div> 
+            <br />
+            <div  id="Phone-Numbers-members">PHONE NUMBERS: </div>
+            <br />
+            <div  id="Email-members">EMAIL: </div> 
+
+        </form>
+
+        <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
+
+        
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page mambers-info -->
+
+<!-- Start of Edit-members-info-pop page: #Edit-members-info-pop -->
+    <div data-role="page" id="Edit-members-info-pop">
+
+        <div data-role="header" data-theme="b">
+            <h1>Edit members info pop</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input type="text" placeholder="FIRST NAME:" id="Edit-FirstName" >
+            <input type="text" placeholder="LAST NAME:" id="Edit-LastName" >
+            <input type="text" placeholder="GENDER:" id="Edit-Gender">
+            <input type="text" placeholder="PHONE NUBBER: " id="Edit-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Edit-Email">
+
+            <button id="btn_editInfo" class="button" onclick="editInfo()">SAVE</button>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Edit-members-info-pop -->
+
+<!-- Start of coaches-info page: #coaches-info -->
+    <div data-role="page" id="coaches-info" data-theme="a">
+
+        <div data-role="header">
+            <h1>coaches-info</h1>
+        </div><!-- /header -->
+
+        <form>
+            <div id="FirstName-members">FIRST NAME: </div>
+            <br />
+            <div id="LastName-members">LAST NAME: </div>
+            <br />
+            <div id="Gender-members">GENDER: </div>
+            <br />
+            <div id="Phone-Numbers-members">PHONE NUMBERS: </div>
+            <br />
+            <div id="Email-members">EMAIL: </div>
+
+        </form>
+
+        <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
+
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page coaches-info -->
 
 </body>
 </html>

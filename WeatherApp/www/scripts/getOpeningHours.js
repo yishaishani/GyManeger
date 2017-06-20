@@ -4,21 +4,12 @@
 
 function getOpening() {
     var xhttp = new XMLHttpRequest();
-
+    xhttp.responseType = "json";
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var data = [];
-            data = this.responseText
-            var size = data.length;
-
-            document.getElementById("openingHours").innerHTML += 'day:';
-            for (i = 0; i < size; i++) {
-                if (data[i] == '*')
-                    document.getElementById("openingHours").innerHTML += '\n' + 'day:';
-                else
-                    document.getElementById("openingHours").innerHTML += data[i];
-            }
+            var obj = $.parseJSON(this.response)
+            document.getElementById("openingHours").innerText = obj.map(function (a) { return a.DAY + a.HOURS + "\n" });
         }
     };
 
