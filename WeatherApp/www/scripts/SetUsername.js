@@ -4,16 +4,17 @@ function SetUsername() {
     var username = document.getElementById("usernameLOG").value;
     var password = document.getElementById("passwordLOG").value;
 
-    var json = JSON.stringify(eval("(" + password + ")"));
     
     var xhttp = new XMLHttpRequest();
+    
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + username, true);
-
-    xhttp.send(json);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(JSON.stringify({password}));
+   
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location.href = "#main-members";//todo: change to add personal.
+            window.location.href = "#main-members";
         }
     }
 }
@@ -30,12 +31,13 @@ function verifyUserName() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response == 'true') {
                 switch(flag){
-                    case 1:{ getTrainersInfo();
+                    case 1: {
+                        getTrainersInfo();
                         window.location.href = "#main-members";
                              break;
                     }
                     case 2: {
-                        //getTrainersInfo();
+                        getCoachesInfo();
                         window.location.href = "#main-coaches";
                         break;
                     }

@@ -17,6 +17,7 @@
     <script type="text/javascript" src="scripts/setCoaches.js"></script>
     <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
     <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
+    <script type="text/javascript" src="scripts/getCoachesInfo.js"></script>
 </head>
 
 <body>
@@ -68,7 +69,7 @@
 		<h1>main coaches</h1>
 	</div><!-- /header -->
 
-    <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+    <p><a href="#coaches-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
     <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
     <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDUALE</a></p>
 
@@ -104,7 +105,7 @@
         <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
         <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">COACHES</a></p>
         <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MEMBERS</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">HOURS</a></p>
+        <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">HOURS</a></p>
 
 
 
@@ -121,8 +122,13 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		
-        <div id="openingHours" ></div>
+		<table>
+            <tr>
+                <td id="dayHours"></td>
+                <td id="openingHours"></td>
+            </tr>
+        </table>
+        <!--<div id="openingHours" ></div>-->
 </div><!-- /content -->
 
 	<div data-role="footer">
@@ -205,19 +211,31 @@
         <div data-role="header">
             <h1>mambers info</h1>
         </div><!-- /header -->
-        
-        <form >
-            <div  id="FirstName-members" >FIRST NAME: </div>
-            <br/>
-            <div  id="LastName-members">LAST NAME: </div>
-            <br />
-            <div id="Gender-members">GENDER: </div> 
-            <br />
-            <div  id="Phone-Numbers-members">PHONE NUMBERS: </div>
-            <br />
-            <div  id="Email-members">EMAIL: </div> 
+        <table>
+            <tr>
+                <td>FIRST NAME:</td>
+                <td id="FirstName-members"></td>
+            </tr>
+            <tr>
+                <td>LAST NAME:</td>
+                <td id="LastName-members"></td>
+            </tr>
+            <tr>
+                <td>GENDER:</td>
+                <td id="Gender-members"></td>
+            </tr>
+            <tr>
+                <td>PHONE NUMBERS:</td>
+                <td id="Phone-Numbers-members"></td>
+            </tr>
+            <tr>
+                <td>EMAIL:</td>
+                <td id="Email-members"></td>
+            </tr>
+            
 
-        </form>
+        </table>
+       
 
         <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
 
@@ -256,8 +274,41 @@
         <div data-role="header">
             <h1>coaches-info</h1>
         </div><!-- /header -->
+        <table>
+            <tr>
+            <th>DAY OF WORKING</th>
+            </tr>
+            <tr>
+                <td>sunday</td>
+                <td id="day1"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day2"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day3"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day4"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day5"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day6"> - </td>
+            </tr> 
+            <tr>
+                <td>sunday</td>
+                <td id="day7"> - </td>
+            </tr> 
 
-        <form>
+        </table>
+        <!--<form>
             <div id="FirstName-members">FIRST NAME: </div>
             <br />
             <div id="LastName-members">LAST NAME: </div>
@@ -268,7 +319,7 @@
             <br />
             <div id="Email-members">EMAIL: </div>
 
-        </form>
+        </form>-->
 
         <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
 
@@ -278,6 +329,41 @@
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page coaches-info -->
+
+<!-- Start of update-hours page: #update-hours -->
+    <div data-role="page" id="update-hours" data-theme="a">
+
+        <div data-role="header">
+            <h1>update hours</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+                
+                <td>
+                <div role="main" class="ui-content">
+                    <input name="editDay" type="text" placeholder="sunday:" id="Edit-sunday">
+                    <input name="editDay" type="text" placeholder="monday:" id="Edit-monday">
+                    <input name="editDay" type="text" placeholder="tuesday:" id="Edit-tuesday">
+                    <input name="editDay" type="text" placeholder="wednesday: " id="Edit-wednesday">
+                    <input name="editDay" type="text" placeholder="thursday:" id="Edit-thursday">
+                    <input name="editDay" type="text" placeholder="friday:" id="Edit-friday">
+                    <input name="editDay" type="text" placeholder="saturday:" id="Edit-saturday">
+ 
+              </div>
+                </td>
+            </tr>
+        </table>   
+        <button id="btn_updateHours" class="button" onclick="updatehours()">SAVE</button>
+    <!-- /content -->
+        
+        
+
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page update-hours -->
 
 </body>
 </html>

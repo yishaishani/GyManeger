@@ -47,13 +47,17 @@ function editInfo() {
     var email = document.getElementById("Edit-Email").value;
 
     var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Trainers/" + username + "/" + firstname + "/" + lastname + "/" + gender + "/" + phonenumber, true);
+
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(JSON.stringify({ email }));
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
         }
     }
-    xhttp.open("GET","http://yishai-001-site1.atempurl.com/Trainers/"+username+"/"+firstname+"/"+lastname+"/"+gender+"/"+phonenumber+"/"+email , true);
+
     xhttp.send();
 
 }
