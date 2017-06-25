@@ -1,8 +1,10 @@
 ﻿$(document.getElementsById('#openingHours')).readyState(function(){
         getOpening();
     });
-
+var flagOpen = 0;
 function getOpening() {
+    if (!flagOpen)
+        {
     var xhttp = new XMLHttpRequest();
     xhttp.responseType = "json";
 
@@ -14,13 +16,16 @@ function getOpening() {
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("dayHours").innerText += array[0][i];
                 document.getElementById("openingHours").innerText += array1[0][i];
+                flagOpen = 1;
             }
         }
+    
     };
 
     xhttp.open("GET", "http://yishai-001-site1.atempurl.com/OpeningHours/all", true);
 
     xhttp.send();
+}
 }
 
 
@@ -44,7 +49,7 @@ function getOpeningHours() {
         }
     };
 
-    xhttp.open("GET", "http://localhost:56406/OpeningHours/all", true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/OpeningHours/all", true);
 
     xhttp.send();
 
@@ -52,20 +57,21 @@ function getOpeningHours() {
 }
 
 function updatehours() {
-    var sunday = document.getElementById("Edit-sunday").value;
-    var monday = document.getElementById("Edit-monday").value;
-    var tuesday = document.getElementById("Edit-tuesday").value;
-    var wednesday = document.getElementById("Edit-wednesday").value;
-    var thursday = document.getElementById("Edit-thursday").value;
-    var friday = document.getElementById("Edit-friday").value;
-    var saturday = document.getElementById("Edit-saturday").value;
+    var sundey = document.getElementById("Edit-sunday").value;
+    var mondey = document.getElementById("Edit-monday").value;
+    var Tuesday = document.getElementById("Edit-tuesday").value;
+    var Wednesday = document.getElementById("Edit-wednesday").value;
+    var Thursday = document.getElementById("Edit-thursday").value;
+    var Friday = document.getElementById("Edit-friday").value;
+    var Saturday = document.getElementById("Edit-saturday").value;
 
     var xhttp = new XMLHttpRequest();
-
-    xhttp.open("POST", "http://localhost:56406/OpeningHours/update", true);
+    var update = "update";
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/OpeningHours/" + update, true);
     xhttp.setRequestHeader("Content-type", "application/json");
-    var str = JSON.stringify({ sunday, monday, tuesday, wednesday, thursday, friday, saturday });
-    xhttp.send(str);
+    
+
+    xhttp.send(JSON.stringify({sundey, mondey ,Tuesday ,Wednesday, Thursday,Friday,Saturday }));
     
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

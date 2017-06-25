@@ -1,23 +1,24 @@
-﻿
+﻿var flagTrainers = 0;
 function getTrainersInfo() {
+    if (!flagTrainers) {
+        var username = document.getElementById("username").value;
 
-    var username = document.getElementById("username").value;
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.responseType = "json";
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var obj = $.parseJSON(this.response)
-            document.getElementById("FirstName-members").innerText += obj.map(function (a) { return  "  " + a.FirstName  });
-            document.getElementById("LastName-members").innerText += obj.map(function (a) { return "  " + a.LastName });
-            document.getElementById("Gender-members").innerText += obj.map(function (a) { return "  " + a.Gender });
-            document.getElementById("Phone-Numbers-members").innerText += obj.map(function (a) { return "  " + a.PhoneNumber });
-            document.getElementById("Email-members").innerText += obj.map(function (a) { return "  " + a.Email });
-        }
-    };
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Trainers/" + username, true);
-    xhttp.send();
-
+        var xhttp = new XMLHttpRequest();
+        xhttp.responseType = "json";
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = $.parseJSON(this.response)
+                document.getElementById("FirstName-members").innerText += obj.map(function (a) { return "  " + a.FirstName });
+                document.getElementById("LastName-members").innerText += obj.map(function (a) { return "  " + a.LastName });
+                document.getElementById("Gender-members").innerText += obj.map(function (a) { return "  " + a.Gender });
+                document.getElementById("Phone-Numbers-members").innerText += obj.map(function (a) { return "  " + a.PhoneNumber });
+                document.getElementById("Email-members").innerText += obj.map(function (a) { return "  " + a.Email });
+                flagTrainers = 1;
+            }
+        };
+        xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Trainers/" + username, true);
+        xhttp.send();
+    }
 }
 function getInfoToEdit() {
     var username = document.getElementById("username").value;
