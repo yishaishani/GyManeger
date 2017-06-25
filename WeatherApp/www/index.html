@@ -18,6 +18,7 @@
     <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
     <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
     <script type="text/javascript" src="scripts/getCoachesInfo.js"></script>
+    <script type="text/javascript" src="scripts/Maneger.js"></script>
 </head>
 
 <body>
@@ -33,9 +34,9 @@
 		<h2>wellcome</h2>
 
         
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagMembers()">MEMBERS ZONE</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagCoaches()">COACHES ZONE</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagManeger()">MANAGER ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagTrainersPage()">TRAINERS ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagCoachesPage()">COACHES ZONE</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="flagManegerPage()">MANAGER ZONE</a></p>
         <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpening()">OPENING HOURS</a></p>
         <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all">ABOUT</a></p>
     </div><!-- /content -->
@@ -45,14 +46,14 @@
 	</div><!-- /footer -->
 </div><!-- /page main -->
 
-<!-- Start of main-members page: #main-members -->
-    <div data-role="page" id="main-members" data-theme="a">
+<!-- Start of main-trainers page: #main-trainers -->
+    <div data-role="page" id="main-trainers" data-theme="a">
 
         <div data-role="header">
-            <h1>main-members</h1>
+            <h1>main-trainers</h1>
         </div><!-- /header -->
 
-        <p><a href="#mambers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+        <p><a href="#trainers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
         <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
         <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDULE</a></p>
 
@@ -60,7 +61,7 @@
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page main-members -->
+    </div><!-- /page main-trainers -->
 
 <!-- Start of main-coaches page: #main-coaches -->
 <div data-role="page" id="main-coaches" data-theme="a">
@@ -73,17 +74,7 @@
     <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
     <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDUALE</a></p>
 
-    <form>
-        <label for="zip-code">Enter your details:</label>
-        <input type="text" placeholder="Firstname" id="FirstName">
-        <input type="text" placeholder="Lestname" id="LastName">
-        <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
-        <br /><br /><br /><br />
-        <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">insert details</button>
-
-        <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">get all coaches</button>
-        <div id="getCoaches"></div>
-    </form>
+   
 
 	<div data-role="footer">
 		<h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
@@ -102,12 +93,12 @@
            
         </form>
         
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
-        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">COACHES</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MEMBERS</a></p>
+        <p><a href="#maneger-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
+        <p><a href="#Manager-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop"  onclick="clearDivAllCoaches()">COACHES</a></p>
+        <p><a href="#Manager-trainers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllTrainers()">TRAINERS</a></p>
+        <p><a href="#Manager-manegers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllManeger()">MANEGERS</a></p>
         <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">HOURS</a></p>
-
-
+        
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
@@ -145,9 +136,15 @@
 
         <div role="main" class="ui-content">
            
-            <div id="aboutUs">bgdsbtdsbrtfbsverfvesg
-                                    fresgbgvtrdbtrfdsbrves
-                                    frsevrdsvrsevresvrseg
+            <div id="aboutUs">So who are we?
+The preservation of life and the ability to organize to focus on routine, mystery.
+Health, health, health, health, health, health, health, health, health, health, balance,
+Today, surgery is an equal opportunity for everyone, and gamma, supervision of men and women, with a coach of your kind.
+Fitness Room / Gym, Fitness Room / Gym, Fitness Room / Gym, Fitness Room / Gym, Fitness Room / Gym.
+
+Amman Approximately 000 corners believe believers
+Gym Free Photo Photo
+Give us the opportunity to express you.
             </div>
         </div><!-- /content -->
 
@@ -174,9 +171,7 @@
         
 
         </div><!-- /content -->
-        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MEMBERS ZONE</a></p>
-        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all">COACHES ZONE</a></p>
-        <p><a href="#main-members" class="ui-btn ui-shadow ui-corner-all">MANAGER ZONE</a></p>
+
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
         </div><!-- /footer -->
@@ -205,39 +200,39 @@
         </div><!-- /footer -->
     </div><!-- /page sign-in-pop -->
 
-<!-- Start of mambers-info page: #mambers-info -->
-    <div data-role="page" id="mambers-info" data-theme="a">
+<!-- Start of trainers-info page: #trainers-info -->
+    <div data-role="page" id="trainers-info" data-theme="a">
 
         <div data-role="header">
-            <h1>members info</h1>
+            <h1>trainers info</h1>
         </div><!-- /header -->
         <table>
             <tr>
                 <td>FIRST NAME:</td>
-                <td id="FirstName-members"></td>
+                <td id="FirstName-trainers"></td>
             </tr>
             <tr>
                 <td>LAST NAME:</td>
-                <td id="LastName-members"></td>
+                <td id="LastName-trainers"></td>
             </tr>
             <tr>
                 <td>GENDER:</td>
-                <td id="Gender-members"></td>
+                <td id="Gender-trainers"></td>
             </tr>
             <tr>
                 <td>PHONE NUMBERS:</td>
-                <td id="Phone-Numbers-members"></td>
+                <td id="Phone-Numbers-trainers"></td>
             </tr>
             <tr>
                 <td>EMAIL:</td>
-                <td id="Email-members"></td>
+                <td id="Email-trainers"></td>
             </tr>
             
 
         </table>
        
 
-        <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
+        <p><a href="#Edit-trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
 
         
 
@@ -246,11 +241,52 @@
         </div><!-- /footer -->
     </div><!-- /page mambers-info -->
 
-<!-- Start of Edit-members-info-pop page: #Edit-members-info-pop -->
-    <div data-role="page" id="Edit-members-info-pop">
+    <!-- Start of maneger-info page: #maneger-info -->
+    <div data-role="page" id="maneger-info" data-theme="a">
+
+        <div data-role="header">
+            <h1>maneger info</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+                <td>FIRST NAME:</td>
+                <td id="FirstName-maneger"></td>
+            </tr>
+            <tr>
+                <td>LAST NAME:</td>
+                <td id="LastName-maneger"></td>
+            </tr>
+            
+            <tr>
+                <td>PHONE NUMBERS:</td>
+                <td id="Phone-Numbers-maneger"></td>
+            </tr>
+            <tr>
+                <td>EMAIL:</td>
+                <td id="Email-maneger"></td>
+            </tr>
+            <tr>
+                <td>USERNAME:</td>
+                <td id="UserName-maneger"></td>
+            </tr>
+
+        </table>
+
+
+        <p><a href="#Edit-maneger-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getManegerInfoToEdit()">EDIT INFO</a></p>
+
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page maneger-info -->
+
+<!-- Start of Edit-trainers-info-pop page: #Edit-trainers-info-pop -->
+    <div data-role="page" id="Edit-trainers-info-pop">
 
         <div data-role="header" data-theme="b">
-            <h1>Edit members info pop</h1>
+            <h1>Edit trainers info pop</h1>
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
@@ -266,7 +302,30 @@
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Edit-members-info-pop -->
+    </div><!-- /page Edit-trainers-info-pop -->
+
+    <!-- Start of Edit-maneger-info-pop page: #Edit-maneger-info-pop -->
+    <div data-role="page" id="Edit-maneger-info-pop">
+
+        <div data-role="header" data-theme="b">
+            <h1>Edit maneger info pop</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <input type="text" placeholder="FIRST NAME:" id="Edit-maneger-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="Edit-maneger-LastName">
+            <input type="text" placeholder="PHONE NUBBER: " id="Edit-maneger-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Edit-maneger-Email">
+            <input type="text" placeholder="USERNAME:" id="Edit-maneger-UserName">
+
+
+            <button id="btn_editInfo" class="button" onclick="editManegerInfo()">SAVE</button>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Edit-maneger-info-pop -->
 
 <!-- Start of coaches-info page: #coaches-info -->
     <div data-role="page" id="coaches-info" data-theme="a">
@@ -308,20 +367,9 @@
             </tr> 
 
         </table>
-        <!--<form>
-            <div id="FirstName-members">FIRST NAME: </div>
-            <br />
-            <div id="LastName-members">LAST NAME: </div>
-            <br />
-            <div id="Gender-members">GENDER: </div>
-            <br />
-            <div id="Phone-Numbers-members">PHONE NUMBERS: </div>
-            <br />
-            <div id="Email-members">EMAIL: </div>
 
-        </form>-->
 
-        <p><a href="#Edit-members-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
+        <p><a href="#Edit-trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">EDIT INFO</a></p>
 
 
 
@@ -364,6 +412,186 @@
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page update-hours -->
+
+    <!-- Start of Manager-coaches page: #Manager-coaches -->
+    <div data-role="page" id="Manager-coaches" data-theme="a">
+
+        <div data-role="header">
+            <h1>Manager coaches</h1>
+        </div><!-- /header -->
+        <p><a href="#add-coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">ADD COACHES</a></p>
+
+        <p><a href="#del-coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">REMOVE COACHES</a></p>
+
+        <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">get all coaches</button>
+
+        <div id="getCoaches"></div>
+      
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Manager-coaches -->
+
+    <!-- Start of Manager-trainers page: #Manager-trainers -->
+    <div data-role="page" id="Manager-trainers" data-theme="a">
+
+        <div data-role="header">
+            <h1>Manager-trainers</h1>
+        </div><!-- /header -->
+        <p><a href="#del-trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">REMOVE TRAINERS</a></p>
+        <p><a href="#add-trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">ADD TRAINERS</a></p>
+        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">get all trainers</button>
+
+        <div id="getTrainers"></div>
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Manager-trainers -->
+
+    <!-- Start of Manager-manegers page: #Manager-manegers -->
+    <div data-role="page" id="Manager-manegers" data-theme="a">
+
+        <div data-role="header">
+            <h1>Manager-manegers</h1>
+        </div><!-- /header -->
+        <p><a href="#del-maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">REMOVE MANEGER</a></p>
+        <p><a href="#add-maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">ADD MANEGER</a></p>
+        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManeger()">get all manegers</button>
+
+        <div id="getManeger"></div>
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Manager-manegers -->
+
+    <!-- Start of add-coaches-pop page: #add-coaches-pop -->
+    <div data-role="page" id="add-coaches-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>add coaches</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter your details:</label>
+            <input type="text" placeholder="Firstname" id="FirstName">
+            <input type="text" placeholder="Lestname" id="LastName">
+            <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
+            <input type="text" placeholder="username" id="UserName">
+
+            <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">ADD COACHES</button>
+
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page add-coaches-pop -->
+
+    <!-- Start of del-coaches-pop page: #del-coaches-pop -->
+    <div data-role="page" id="del-coaches-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>delete coaches</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter username of Coaches to delete:</label>
+            <input type="text" placeholder="username" id="UserName-del">
+            
+            <button type="button" id="btn_delCoaches" class="button" onclick="delCoaches()">DELETE COACHES</button>
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page del-coaches-pop -->
+
+    <!-- Start of add-trainers-pop page: #add-trainers-pop -->
+    <div data-role="page" id="add-trainers-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>add trainers</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">ENTER DETAILS OF NEW TRAINERS:</label>
+            <input type="text" placeholder="FIRST NAME:" id="add-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="add-LastName">
+            <input type="text" placeholder="GENDER:" id="add-Gender">
+            <input type="text" placeholder="PHONE NUBBER: " id="add-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="add-Email">
+            <input type="text" placeholder="username:" id="add-username">
+            <button type="button" id="btn_insertCoaches" class="button" onclick="addTrainers()">ADD TRAINERS</button>
+
+
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page add-trainers-pop -->
+
+    <!-- Start of del-trainers-pop page: #del-trainers-pop -->
+    <div data-role="page" id="del-trainers-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>delete trainers</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter username of Trainers to delete:</label>
+            <input type="text" placeholder="username" id="UserName-trainers-del">
+
+            <button type="button" id="btn_deltrainers" class="button" onclick="delTrainers()">DELETE TRAINERS</button>
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page del-trainers-pop -->
+
+    <!-- Start of add-maneger-pop page: #add-maneger-pop -->
+    <div data-role="page" id="add-maneger-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>add maneger</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">ENTER DETAILS OF NEW TRAINERS:</label>
+            <input type="text" placeholder="FIRST NAME:" id="add-maneger-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="add-maneger-LastName">
+            <input type="text" placeholder="PHONE NUBBER: " id="add-maneger-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="add-maneger-Email">
+            <input type="text" placeholder="username:" id="add-maneger-username">
+            <button type="button" id="btn_insertManeger" class="button" onclick="addManeger()">ADD MANEGER</button>
+
+
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page add-maneger-pop -->
+
+<!-- Start of del-maneger-pop page: #del-maneger-pop -->
+    <div data-role="page" id="del-maneger-pop" data-theme="a">
+
+        <div data-role="header">
+            <h1>delete maneger</h1>
+        </div><!-- /header -->
+        <form>
+            <label for="zip-code">Enter username of maneger to delete:</label>
+            <input type="text" placeholder="username" id="UserName-maneger-del">
+
+            <button type="button" id="btn_delmaneger" class="button" onclick="delManeger()">DELETE MANEGER</button>
+        </form>
+
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page del-maneger-pop -->
 
 </body>
 </html>

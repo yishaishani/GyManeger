@@ -14,7 +14,7 @@ function SetUsername() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location.href = "#main-members";
+            window.location.href = "#main-trainers";
         }
     }
 }
@@ -30,11 +30,11 @@ function verifyUserName() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response == 'true') {
-                switch(flag){
+                switch (flag) {
                     case 1: {
                         getTrainersInfo();
-                        window.location.href = "#main-members";
-                             break;
+                        window.location.href = "#main-trainers";
+                        break;
                     }
                     case 2: {
                         getCoachesInfo();
@@ -42,51 +42,47 @@ function verifyUserName() {
                         break;
                     }
                     case 3: {
-                        //getTrainersInfo();
+                        getManegerInfo();
                         window.location.href = "#main-maneger";
                         break;
                     }
                 }
 
             }
-            else
-                window.location.href = "#about-pop";
+            else {
+                alert("worng usernamr or password!")
+                document.getElementById("password").value = "";
+            }
         }
     }
 
 
 }
-function flagMembers() {
+function flagTrainersPage() {
     flag = 1;
 }
-function flagCoaches() {
+function flagCoachesPage() {
     flag = 2;
 }
-function flagManeger() {
+function flagManegerPage() {
     flag = 3;
 }
 
-function getMembers() {
+function getAllTrainers() {
+    document.getElementById("getTrainers").innerText = "";
     var xhttp = new XMLHttpRequest();
-    
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Trainers/all", true);
 
+    xhttp.send();
+    xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var data = [];
-            data = this.responseText
-            var size = data.length;
-
-            document.getElementById("getMembers").innerHTML += 'name:';
-            for (i = 0; i < size; i++) {
-                if (data[i] == '*')
-                    document.getElementById("getMembers").innerHTML += '\n' + 'name:';
-                else
-                    document.getElementById("getMembers").innerHTML += data[i];
+            var obj = JSON.parse(this.response);
+            var array =[obj.map(function (a) { return a.FirstName + "\n" })];
+            for (i = 0; i < array[0].length; i++) {
+                document.getElementById("getTrainers").innerText += array[0][i];
             }
+        }
         }
     };
 
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/all", true);
-
-    xhttp.send();
-}

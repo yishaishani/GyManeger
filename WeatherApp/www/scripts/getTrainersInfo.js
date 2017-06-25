@@ -8,11 +8,11 @@ function getTrainersInfo() {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var obj = $.parseJSON(this.response)
-                document.getElementById("FirstName-members").innerText += obj.map(function (a) { return "  " + a.FirstName });
-                document.getElementById("LastName-members").innerText += obj.map(function (a) { return "  " + a.LastName });
-                document.getElementById("Gender-members").innerText += obj.map(function (a) { return "  " + a.Gender });
-                document.getElementById("Phone-Numbers-members").innerText += obj.map(function (a) { return "  " + a.PhoneNumber });
-                document.getElementById("Email-members").innerText += obj.map(function (a) { return "  " + a.Email });
+                document.getElementById("FirstName-trainers").innerText += obj.map(function (a) { return "  " + a.FirstName });
+                document.getElementById("LastName-trainers").innerText += obj.map(function (a) { return "  " + a.LastName });
+                document.getElementById("Gender-trainers").innerText += obj.map(function (a) { return "  " + a.Gender });
+                document.getElementById("Phone-Numbers-trainers").innerText += obj.map(function (a) { return "  " + a.PhoneNumber });
+                document.getElementById("Email-trainers").innerText += obj.map(function (a) { return "  " + a.Email });
                 flagTrainers = 1;
             }
         };
@@ -61,4 +61,58 @@ function editInfo() {
 
     xhttp.send();
 
+}
+
+function addTrainers() {
+    var firstname = document.getElementById("add-FirstName").value;
+    var LastName = document.getElementById("add-LastName").value;
+    var Gender = document.getElementById("add-Gender").value;
+    var PhoneNumber = document.getElementById("add-PhoneNumber").value;
+    var Email = document.getElementById("add-Email").value;
+    var UserName = document.getElementById("add-username").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Trainers/add/"  + firstname , true);
+
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(JSON.stringify({ LastName, Gender,  PhoneNumber , Email , UserName}));
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert(this.response);
+            window.location = "#main-maneger"
+            document.getElementById("add-FirstName").value = "";
+            document.getElementById("add-LastName").value = "";
+            document.getElementById("add-Gender").value = "";
+            document.getElementById("add-PhoneNumber").value = "";
+            document.getElementById("add-Email").value = "";
+            document.getElementById("add-username").value = "";
+        }
+    }
+
+    xhttp.send();
+}
+
+function delTrainers() {
+    
+    var userName = document.getElementById("UserName-trainers-del").value;
+
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open("DELETE", "http://yishai-001-site1.atempurl.com/Trainers/" + userName, true);
+        xhttp.send();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(this.response);
+                window.location = "#main-maneger"
+                document.getElementById("UserName-trainers-del").value = "";
+            }
+        };
+
+    
+}
+
+function clearDivAllTrainers() {
+    document.getElementById("getTrainers").innerText = "";
 }
