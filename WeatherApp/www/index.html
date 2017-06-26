@@ -19,6 +19,7 @@
     <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
     <script type="text/javascript" src="scripts/getCoachesInfo.js"></script>
     <script type="text/javascript" src="scripts/Maneger.js"></script>
+    <script type="text/javascript" src="scripts/Classes.js"></script>
 </head>
 
 <body>
@@ -54,8 +55,8 @@
         </div><!-- /header -->
 
         <p><a href="#trainers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
-        <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDULE</a></p>
+        <p><a href="#add-trainers-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getCoachesForClasses()">CLASSES</a></p>
+        <p><a href="#trainers-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllTrainersSchedule()">MY SCHEDULE</a></p>
 
 
         <div data-role="footer">
@@ -71,8 +72,8 @@
 	</div><!-- /header -->
 
     <p><a href="#coaches-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">PERSONAL INFO</a></p>
-    <p><a href="#main-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">CLASSES</a></p>
-    <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">MY SCHEDUALE</a></p>
+    <p><a href="#add-coaches-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">ADD CLASSES</a></p>
+    <p><a href="#coaches-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllCoachesSchedule()">MY SCHEDUALE</a></p>
 
    
 
@@ -97,7 +98,7 @@
         <p><a href="#Manager-coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop"  onclick="clearDivAllCoaches()">COACHES</a></p>
         <p><a href="#Manager-trainers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllTrainers()">TRAINERS</a></p>
         <p><a href="#Manager-manegers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllManeger()">MANEGERS</a></p>
-        <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">HOURS</a></p>
+        <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">OPENING HOURS</a></p>
         
 
         <div data-role="footer">
@@ -439,7 +440,7 @@ Give us the opportunity to express you.
             <h1>Manager-trainers</h1>
         </div><!-- /header -->
         <p><a href="#del-trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">REMOVE TRAINERS</a></p>
-        <p><a href="#add-trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">ADD TRAINERS</a></p>
+        <p><a href="#add-trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" >ADD TRAINERS</a></p>
         <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">get all trainers</button>
 
         <div id="getTrainers"></div>
@@ -592,6 +593,112 @@ Give us the opportunity to express you.
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
         </div><!-- /footer -->
     </div><!-- /page del-maneger-pop -->
+
+<!-- Start of add-coaches-classes page: #add-coaches-classes -->
+    <div data-role="page" id="add-coaches-classes" data-theme="a">
+
+        <div data-role="header">
+            <h1>add coaches classes</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+
+                <td>
+                    <div role="main" class="ui-content">
+                        <input  type="text" placeholder="strat time:" id="StartTime">
+                        <input  type="text" placeholder="end time:" id="EndTime">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button id="btn_addCoachesClasses" class="button" onclick="AddCoachesClasses()">ADD</button>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page add-coaches-classes -->
+    
+<!-- Start of coaches-schedule page: #coaches-schedule -->
+    <div data-role="page" id="coaches-schedule" data-theme="a">
+
+        <div data-role="header">
+            <h1>coaches schedule</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+                <td id="getTranierUserName"></td>
+                <td id="getStartTime"></td>
+            </tr>
+        </table>
+       
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page coaches-schedule -->
+
+<!-- Start of trainers-schedule page: #trainers-schedule -->
+    <div data-role="page" id="trainers-schedule" data-theme="a">
+
+        <div data-role="header">
+            <h1>trainers schedule</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+                <td id="getCoachesUserName"></td>
+                <td id="getTrainersStartTime"></td>
+            </tr>
+        </table>
+
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page trainers-schedule -->
+
+<!-- Start of add-trainers-classes page: #add-trainers-classes -->
+    <div data-role="page" id="add-trainers-classes" data-theme="a">
+
+        <div data-role="header">
+            <h1>add trainers classes</h1>
+        </div><!-- /header -->
+        <table>
+            <tr>
+
+                <td>
+                    <div role="main" class="ui-content">
+                        <div id="getCoachesForTheClasses"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+            <input type="text" placeholder="enter here name of coach:"  id="chosenCoach" />
+
+                <table id="emptyClasses">
+                    <tr>
+                        <td> name of coach: </td>
+                        <td> start at time: </td>
+                        <td> numbers of class: </td>
+                    </tr>
+                    <tr>
+                        <td id="getSlotCoachesUserName"></td>
+                        <td id="getSlotStartTime"></td>
+                        <td id="getSlotID"></td>
+                    </tr>
+                </table>
+        <input type="text" placeholder="enter a number of class:" id="chosenNumberOfClass" />
+        <button id="btn_addTrainersClasses" class="button" onclick="AddTrainersClasses()">NEXT</button>
+        <button id="btn_addTrainersClasses" class="button" onclick="SaveClass()">NEXT</button>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page add-trainers-classes -->
+
 
 </body>
 </html>

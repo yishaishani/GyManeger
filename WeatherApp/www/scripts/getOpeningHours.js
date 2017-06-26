@@ -57,8 +57,8 @@ function getOpeningHours() {
 }
 
 function updatehours() {
-    var sundey = document.getElementById("Edit-sunday").value;
-    var mondey = document.getElementById("Edit-monday").value;
+    var Sunday = document.getElementById("Edit-sunday").value;
+    var Monday = document.getElementById("Edit-monday").value;
     var Tuesday = document.getElementById("Edit-tuesday").value;
     var Wednesday = document.getElementById("Edit-wednesday").value;
     var Thursday = document.getElementById("Edit-thursday").value;
@@ -71,7 +71,7 @@ function updatehours() {
     xhttp.setRequestHeader("Content-type", "application/json");
     
 
-    xhttp.send(JSON.stringify({sundey, mondey ,Tuesday ,Wednesday, Thursday,Friday,Saturday }));
+    xhttp.send(JSON.stringify({Sunday, Monday ,Tuesday ,Wednesday, Thursday,Friday,Saturday }));
     
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
