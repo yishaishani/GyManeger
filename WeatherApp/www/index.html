@@ -665,39 +665,42 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>add trainers classes</h1>
         </div><!-- /header -->
-        <table>
-            <tr>
+        <div id="FirstHiddenShow">
+            <table>
+                <tr>
 
-                <td>
-                    <div role="main" class="ui-content">
-                        <div id="getCoachesForTheClasses"></div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-            <input type="text" placeholder="enter here name of coach:"  id="chosenCoach" />
+                    <td>
+                        <div role="main" class="ui-content">
+                            <div id="getCoachesForTheClasses"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <input type="text" placeholder="enter here name of coach:" id="chosenCoach" />
+            <button id="btn_NextAddClasses1" class="button" onclick="AddTrainersClasses()">NEXT</button>
+        </div>
+        <div id="SecondHiddenShow">
+            <table id="emptyClasses">
+                <tr>
+                    <td> name of coach: </td>
+                    <td> start at time: </td>
+                    <td> numbers of class: </td>
+                </tr>
+                <tr>
+                    <td id="getSlotCoachesUserName"></td>
+                    <td id="getSlotStartTime"></td>
+                    <td id="getSlotID"></td>
+                </tr>
+            </table>
+            <input type="text" placeholder="enter a number of class:" id="chosenNumberOfClass" />
 
-                <table id="emptyClasses">
-                    <tr>
-                        <td> name of coach: </td>
-                        <td> start at time: </td>
-                        <td> numbers of class: </td>
-                    </tr>
-                    <tr>
-                        <td id="getSlotCoachesUserName"></td>
-                        <td id="getSlotStartTime"></td>
-                        <td id="getSlotID"></td>
-                    </tr>
-                </table>
-        <input type="text" placeholder="enter a number of class:" id="chosenNumberOfClass" />
-        <button id="btn_addTrainersClasses" class="button" onclick="AddTrainersClasses()">NEXT</button>
-        <button id="btn_addTrainersClasses" class="button" onclick="SaveClass()">NEXT</button>
-        <!-- /content -->
+            <button id="btn_NextAddClasses2" class="button" onclick="SaveClass()">NEXT</button>
+            </div><!-- /content -->
 
-        <div data-role="footer">
-            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
-        </div><!-- /footer -->
-    </div><!-- /page add-trainers-classes -->
+            <div data-role="footer">
+                <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to main</a></h4>
+            </div><!-- /footer -->
+        </div><!-- /page add-trainers-classes -->
 
 
 </body>

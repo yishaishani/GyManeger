@@ -44,10 +44,9 @@ function getAllCoachesSchedule() {
 
 function AddTrainersClasses() {
     var UserName = document.getElementById("chosenCoach").value;
-    var divToHidden = document.getElementById('getCoachesForTheClasses'); 
-    var inputToHidden = document.getElementById('chosenCoach');
-    var tableToShow = document.getElementById("emptyClasses");
-    var inputIdToShow = document.getElementById("chosenNumberOfClass");
+    var FirstDivToHiddenShow = document.getElementById("FirstHiddenShow");
+    var SecondDivToHiddenShow = document.getElementById("SecondHiddenShow");
+   
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://yishai-001-site1.atempurl.com/CoachesSchedule/all/" + UserName, true);
 
@@ -67,10 +66,8 @@ function AddTrainersClasses() {
                     document.getElementById("getSlotID").innerText += array2[0][i];
                 }
             }
-            divToHidden.style.display = 'none';
-            inputToHidden.style.display = 'none';
-            tableToShow.style.display = 'block';
-            inputIdToShow.style.display = 'block';
+            FirstDivToHiddenShow.style.display = 'none';
+            SecondDivToHiddenShow.style.display = 'block';
         }
     }
 }
@@ -99,8 +96,9 @@ function getAllTrainersSchedule() {
 
 function getCoachesForClasses() {
     document.getElementById("getCoachesForTheClasses").innerText = "";
-    var tableToHidden = document.getElementById("emptyClasses");
-    var inputIdToHidden = document.getElementById("chosenNumberOfClass"); 
+    var FirstDivToHiddenShow = document.getElementById("FirstHiddenShow");
+    var SecondDivToHiddenShow = document.getElementById("SecondHiddenShow");
+    
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Coaches/all", true);
         xhttp.send();
@@ -112,8 +110,8 @@ function getCoachesForClasses() {
                 for (i = 0; i < array[0].length; i++) {
                     document.getElementById("getCoachesForTheClasses").innerText += array[0][i];
                 }
-                tableToHidden.style.display = 'none';
-                inputIdToHidden.style.display = 'none';
+                SecondDivToHiddenShow.style.display = 'none';
+               
             }
         }
 
@@ -122,24 +120,25 @@ function getCoachesForClasses() {
 function SaveClass() {
     var ID = document.getElementById("chosenNumberOfClass").value;
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/CoachesSchedule/" + ID, true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/CoachesSchedule/ID/" + ID, true);
 
     xhttp.send();
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.response);
-            var StartTime = obj.map(function (a) { return a.StartTime});
-            var EndTime = obj.map(function (a) { return a.EndTime});
-            var CoachesUserName = obj.map(function (a) { return a.UserName });
-            var UserName = document.getElementById("username").value;
+            var StartTime = obj[0].StartTime;
+            var EndTime = obj[0].EndTime;
+            var UserName = obj[0].UserName;
+            var ID = obj[0].ID;
+            var TrainersUserName = document.getElementById("username").value;
             var xhttp2 = new XMLHttpRequest();
             
-            xhttp2.open("POST", "http://yishai-001-site1.atempurl.com/TrainersSchedule/add/" + UserName, true);
+            xhttp2.open("POST", "http://yishai-001-site1.atempurl.com/TrainersSchedule/add/" + TrainersUserName, true);
             xhttp2.setRequestHeader("Content-type", "application/json");
 
 
-            xhttp2.send();
+            xhttp2.send(JSON.stringify({ StartTime , EndTime , ID , UserName }));
             xhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     alert("good!")
