@@ -3,7 +3,7 @@
     var LastName = document.getElementById("LastName").value;
     var DayOfWork = document.getElementById("DayOfWork").value;
     var UserName = document.getElementById("UserName").value;
-   
+    UserName += "2";
 
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Coaches/" + firstName, true);
@@ -45,7 +45,7 @@ function getCoaches() {
 
 function delCoaches(){
     var UserName = document.getElementById("UserName-del").value;
-
+    UserName += "2";
     var xhttp = new XMLHttpRequest();
     
     xhttp.open("DELETE", "http://yishai-001-site1.atempurl.com/Coaches/"+UserName, true);

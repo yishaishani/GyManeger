@@ -1,18 +1,18 @@
 ﻿var flagManeger = 0;
 function getManegerInfo() {
     if (!flagManeger) {
-        var UserName = document.getElementById("add-Maneger-UserName").value;
-
+        var UserName = document.getElementById("UserName").value;
+        UserName += "3";
         var xhttp = new XMLHttpRequest();
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var obj = $.parseJSON(this.response)
-                document.getElementById("FirstName-Maneger").innerText += obj.map(function (a) { return "  " + a.FirstName });
-                document.getElementById("LastName-Maneger").innerText += obj.map(function (a) { return "  " + a.LastName });
-                document.getElementById("Phone-Numbers-Maneger").innerText += obj.map(function (a) { return "  " + a.PhoneNumber });
-                document.getElementById("Email-Maneger").innerText += obj.map(function (a) { return "  " + a.Email });
-                document.getElementById("UserName-Maneger").innerText += obj.map(function (a) { return "  " + a.UserName });
+                document.getElementById("FirstName-Maneger").innerText += obj[0].FirstName;
+                document.getElementById("LastName-Maneger").innerText += obj[0].LastName;
+                document.getElementById("Phone-Numbers-Maneger").innerText += obj[0].PhoneNumber;
+                document.getElementById("Email-Maneger").innerText += obj[0].Email;
+                document.getElementById("UserName-Maneger").innerText += obj[0].UserName;
                 flagManeger = 1;
             }
         };
@@ -22,17 +22,17 @@ function getManegerInfo() {
 }
 function getManegerInfoToEdit() {
     var UserName = document.getElementById("UserName").value;
-
+    UserName += "3";
     var xhttp = new XMLHttpRequest();
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = $.parseJSON(this.response)
-            document.getElementById("Edit-Maneger-FirstName").value = obj.map(function (a) { return a.FirstName });
-            document.getElementById("Edit-Maneger-LastName").value = obj.map(function (a) { return a.LastName });
-            document.getElementById("Edit-Maneger-PhoneNumber").value = obj.map(function (a) { return a.PhoneNumber });
-            document.getElementById("Edit-Maneger-Email").value = obj.map(function (a) { return a.Email });
-            document.getElementById("Edit-Maneger-UserName").value = obj.map(function (a) { return a.UserName });
+            document.getElementById("Edit-Maneger-FirstName").value = obj[0].FirstName;
+            document.getElementById("Edit-Maneger-LastName").value = obj[0].LastName;
+            document.getElementById("Edit-Maneger-PhoneNumber").value = obj[0].PhoneNumber;
+            document.getElementById("Edit-Maneger-Email").value = obj[0].Email;
+            document.getElementById("Edit-Maneger-UserName").value = obj[0].UserName;
         }
     };
     xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Maneger/" + UserName, true);
@@ -45,7 +45,7 @@ function editManegerInfo() {
     var lastname = document.getElementById("Edit-Maneger-LastName").value;
     var phonenumber = document.getElementById("Edit-Maneger-PhoneNumber").value;
     var email = document.getElementById("Edit-Maneger-Email").value;
-    
+    UserName += "3";
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Maneger/" + UserName + "/" + firstname + "/" + lastname + "/" + phonenumber, true);
 
@@ -62,15 +62,15 @@ function editManegerInfo() {
 
 }
 
-function addManeger() {
-    var firstname = document.getElementById("add-Maneger-FirstName").value;
-    var LastName = document.getElementById("add-Maneger-LastName").value;
-    var PhoneNumber = document.getElementById("add-Maneger-PhoneNumber").value;
-    var Email = document.getElementById("add-Maneger-Email").value;
-    var UserName = document.getElementById("add-Maneger-UserName").value;
-
+function AddManeger() {
+    var firstname = document.getElementById("Add-Maneger-FirstName").value;
+    var LastName = document.getElementById("Add-Maneger-LastName").value;
+    var PhoneNumber = document.getElementById("Add-Maneger-PhoneNumber").value;
+    var Email = document.getElementById("Add-Maneger-Email").value;
+    var UserName = document.getElementById("Add-Maneger-UserName").value;
+    UserName += "3";
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Maneger/add/" + firstname, true);
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Maneger/Add/" + firstname, true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify({ LastName, PhoneNumber, Email, UserName }));
@@ -79,10 +79,10 @@ function addManeger() {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
             window.location = "#Main-Maneger"
-            document.getElementById("add-Maneger-FirstName").value = "";
-            document.getElementById("add-Maneger-LastName").value = "";
-            document.getElementById("add-Maneger-PhoneNumber").value = "";
-            document.getElementById("add-Maneger-Email").value = "";
+            document.getElementById("Add-Maneger-FirstName").value = "";
+            document.getElementById("Add-Maneger-LastName").value = "";
+            document.getElementById("Add-Maneger-PhoneNumber").value = "";
+            document.getElementById("Add-Maneger-Email").value = "";
             getManegerInfo();
         }
     }
@@ -93,7 +93,7 @@ function addManeger() {
 function delManeger() {
 
     var UserName = document.getElementById("UserName-Maneger-del").value;
-
+    UserName += "3";
     var xhttp = new XMLHttpRequest();
 
     xhttp.open("DELETE", "http://yishai-001-site1.atempurl.com/Maneger/" + UserName, true);

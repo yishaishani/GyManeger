@@ -56,7 +56,7 @@
         </div><!-- /header -->
 
         <p><a href="#Trainers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
-        <p><a href="#add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getCoachesForClasses()">Classes</a></p>
+        <p><a href="#Add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getCoachesForClasses()">Classes</a></p>
         <p><a href="#Trainers-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllTrainersSchedule()">My Schedule</a></p>
 
 
@@ -73,7 +73,7 @@
 	</div><!-- /header -->
 
     <p><a href="#Coaches-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
-    <p><a href="#add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Classes</a></p>
+    <p><a href="#Add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Classes</a></p>
     <p><a href="#Coaches-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllCoachesSchedule()">My Schedule</a></p>
 
    
@@ -243,7 +243,7 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page mambers-info -->
 
-    <!-- Start of Maneger-info page: #Maneger-info -->
+<!-- Start of Maneger-info page: #Maneger-info -->
     <div data-role="page" id="Maneger-info" data-theme="a">
 
         <div data-role="header">
@@ -421,7 +421,7 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Coaches</h1>
         </div><!-- /header -->
-        <p><a href="#add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Coaches</a></p>
+        <p><a href="#Add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Coaches</a></p>
 
         <p><a href="#del-Coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Coaches</a></p>
 
@@ -441,7 +441,7 @@ Give us the opportunity to express you.
             <h1>Manager Trainers</h1>
         </div><!-- /header -->
         <p><a href="#del-Trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Trainers</a></p>
-        <p><a href="#add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" >Add Trainers</a></p>
+        <p><a href="#Add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" >Add Trainers</a></p>
         <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">Get All Trainers</button>
 
         <div id="getTrainers"></div>
@@ -457,7 +457,7 @@ Give us the opportunity to express you.
             <h1>Manager Manegers</h1>
         </div><!-- /header -->
         <p><a href="#del-Maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Maneger</a></p>
-        <p><a href="#add-Maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Maneger</a></p>
+        <p><a href="#Add-Maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Maneger</a></p>
         <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManeger()">Get All Maneger</button>
 
         <div id="getManeger"></div>
@@ -466,8 +466,8 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page Manager-Manegers -->
 
-<!-- Start of add-Coaches-pop page: #add-Coaches-pop -->
-    <div data-role="page" id="add-Coaches-pop" data-theme="a">
+<!-- Start of Add-Coaches-pop page: #Add-Coaches-pop -->
+    <div data-role="page" id="Add-Coaches-pop" data-theme="a">
 
         <div data-role="header">
             <h1>Add Coaches</h1>
@@ -487,7 +487,7 @@ Give us the opportunity to express you.
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page add-Coaches-pop -->
+    </div><!-- /page Add-Coaches-pop -->
 
 <!-- Start of del-Coaches-pop page: #del-Coaches-pop -->
     <div data-role="page" id="del-Coaches-pop" data-theme="a">
@@ -508,21 +508,21 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page del-Coaches-pop -->
 
-<!-- Start of add-Trainers-pop page: #add-Trainers-pop -->
-    <div data-role="page" id="add-Trainers-pop" data-theme="a">
+<!-- Start of Add-Trainers-pop page: #Add-Trainers-pop -->
+    <div data-role="page" id="Add-Trainers-pop" data-theme="a">
 
         <div data-role="header">
             <h1>Add Trainers</h1>
         </div><!-- /header -->
         <form>
             <label for="zip-code">Enter details of new Trainers:</label>
-            <input type="text" placeholder="FIRST NAME:" id="add-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="add-LastName">
-            <input type="text" placeholder="GENDER:" id="add-Gender">
-            <input type="text" placeholder="PHONE NUBBER: " id="add-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="add-Email">
-            <input type="text" placeholder="UserName:" id="add-UserName">
-            <button type="button" id="btn_insertCoaches" class="button" onclick="addTrainers()">Add Trainers</button>
+            <input type="text" placeholder="FIRST NAME:" id="Add-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="Add-LastName">
+            <input type="text" placeholder="GENDER:" id="Add-Gender">
+            <input type="text" placeholder="PHONE NUBBER: " id="Add-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Add-Email">
+            <input type="text" placeholder="UserName:" id="Add-UserName">
+            <button type="button" id="btn_insertCoaches" class="button" onclick="AddTrainers()">Add Trainers</button>
 
 
         </form>
@@ -531,7 +531,7 @@ Give us the opportunity to express you.
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page add-Trainers-pop -->
+    </div><!-- /page Add-Trainers-pop -->
 
 <!-- Start of del-Trainers-pop page: #del-Trainers-pop -->
     <div data-role="page" id="del-Trainers-pop" data-theme="a">
@@ -552,20 +552,20 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page del-Trainers-pop -->
 
-<!-- Start of add-Maneger-pop page: #add-Maneger-pop -->
-    <div data-role="page" id="add-Maneger-pop" data-theme="a">
+<!-- Start of Add-Maneger-pop page: #Add-Maneger-pop -->
+    <div data-role="page" id="Add-Maneger-pop" data-theme="a">
 
         <div data-role="header">
             <h1>Add Maneger</h1>
         </div><!-- /header -->
         <form>
             <label for="zip-code">Enter Details of new Maneger:</label>
-            <input type="text" placeholder="FIRST NAME:" id="add-Maneger-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="add-Maneger-LastName">
-            <input type="text" placeholder="PHONE NUBBER: " id="add-Maneger-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="add-Maneger-Email">
-            <input type="text" placeholder="UserName:" id="add-Maneger-UserName">
-            <button type="button" id="btn_insertManeger" class="button" onclick="addManeger()">Add Maneger</button>
+            <input type="text" placeholder="FIRST NAME:" id="Add-Maneger-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="Add-Maneger-LastName">
+            <input type="text" placeholder="PHONE NUBBER: " id="Add-Maneger-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Add-Maneger-Email">
+            <input type="text" placeholder="UserName:" id="Add-Maneger-UserName">
+            <button type="button" id="btn_insertManeger" class="button" onclick="AddManeger()">Add Maneger</button>
 
 
         </form>
@@ -574,7 +574,7 @@ Give us the opportunity to express you.
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page add-Maneger-pop -->
+    </div><!-- /page Add-Maneger-pop -->
 
 <!-- Start of del-Maneger-pop page: #del-Maneger-pop -->
     <div data-role="page" id="del-Maneger-pop" data-theme="a">
@@ -595,8 +595,8 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page del-Maneger-pop -->
 
-<!-- Start of add-Coaches-classes page: #add-Coaches-classes -->
-    <div data-role="page" id="add-Coaches-classes" data-theme="a">
+<!-- Start of Add-Coaches-classes page: #Add-Coaches-classes -->
+    <div data-role="page" id="Add-Coaches-classes" data-theme="a">
 
         <div data-role="header">
             <h1>Add Coach classes</h1>
@@ -612,13 +612,13 @@ Give us the opportunity to express you.
                 </td>
             </tr>
         </table>
-        <button id="btn_addCoachesClasses" class="button" onclick="AddCoachesClasses()">Add</button>
+        <button id="btn_AddCoachesClasses" class="button" onclick="AddCoachesClasses()">Add</button>
         <!-- /content -->
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page add-Coaches-classes -->
+    </div><!-- /page Add-Coaches-classes -->
     
 <!-- Start of Coaches-schedule page: #Coaches-schedule -->
     <div data-role="page" id="Coaches-schedule" data-theme="a">
@@ -628,11 +628,21 @@ Give us the opportunity to express you.
         </div><!-- /header -->
         <table>
             <tr>
+                <td> Trainer: </td>
+                <td> Start At: </td>
+                <td> Class number: </td>
+            </tr>
+            <tr>
                 <td id="getTranierUserName"></td>
                 <td id="getStartTime"></td>
+                <td id="getIDClass"></td>
             </tr>
         </table>
-       
+        <button id="btn_ShowDeleteCoachClasses" class="button" onclick="ShowDeleteCoachClass()">To Delete Class</button>
+        <div id="DivToDeleteCoachClass" style="display:none">
+            <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteCoachClass" />
+            <button id="btn_DeleteCoachClasses" class="button" onclick="DeleteCoachClass()">Delete Class</button>
+        </div>
         <!-- /content -->
 
         <div data-role="footer">
@@ -650,13 +660,19 @@ Give us the opportunity to express you.
             <tr>
                 <td> Coach: </td>
                 <td> Start At: </td>
+                <td> Class number: </td>
             </tr>
             <tr>
                 <td id="getCoachesUserName"></td>
                 <td id="getTrainersStartTime"></td>
+                <td id="getTrainersClassNumber"></td>
             </tr>
         </table>
-
+        <button id="btn_ShowDeleteClasses" class="button" onclick="ShowDeleteClass()">To Delete Class</button>
+        <div id="DivToDeleteClass" style="display:none">
+            <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteClass" />
+            <button id="btn_DeleteClasses" class="button" onclick="DeleteClass()">Delete Class</button>
+        </div> 
         <!-- /content -->
 
         <div data-role="footer">
@@ -664,8 +680,8 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page Trainers-schedule -->
 
-<!-- Start of add-Trainers-classes page: #add-Trainers-classes -->
-    <div data-role="page" id="add-Trainers-classes" data-theme="a">
+<!-- Start of Add-Trainers-classes page: #Add-Trainers-classes -->
+    <div data-role="page" id="Add-Trainers-classes" data-theme="a">
 
         <div data-role="header">
             <h1>Add Trainers classes</h1>
@@ -673,15 +689,19 @@ Give us the opportunity to express you.
         <div id="FirstHiddenShow">
             <table>
                 <tr>
-
+                    <td> Coach: </td>
+                    <td> UserName: </td>
+                </tr>
+                <tr>
                     <td>
-                        <div role="Main" class="ui-content">
                             <div id="getCoachesForTheClasses"></div>
-                        </div>
+                    </td>
+                    <td>
+                            <div id="getCoachesUserNameForTheClasses"></div>
                     </td>
                 </tr>
             </table>
-            <input type="text" placeholder="enter here name of Coach:" id="chosenCoach" />
+            <input type="text" placeholder="enter here UserName of Coach:" id="chosenCoach" />
             <button id="btn_NextAddClasses1" class="button" onclick="AddTrainersClasses()">Next</button>
         </div>
         <div id="SecondHiddenShow">
@@ -705,7 +725,7 @@ Give us the opportunity to express you.
             <div data-role="footer">
                 <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
             </div><!-- /footer -->
-        </div><!-- /page add-Trainers-classes -->
+        </div><!-- /page Add-Trainers-classes -->
 
 
 </body>

@@ -34,5 +34,8 @@ form {
     font-weight: bold;    
 }
 h1 {
-    color:forestgreen;
+    color:forestgreen; /*color for text header*/
+}
+h4 {
+    color:forestgreen; /*color for text footer*/
 }

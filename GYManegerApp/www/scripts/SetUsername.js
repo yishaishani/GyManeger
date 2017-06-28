@@ -4,11 +4,11 @@ function SetUserName() {
 
     var UserName = document.getElementById("UserNameLOG").value;
     var Password = document.getElementById("PasswordLOG").value;
-
+    UserName += flag;
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + UserName, true);
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + UserName , true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify({ Password }));
 
@@ -16,19 +16,19 @@ function SetUserName() {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
             switch (Flag) {
-                case 1: {
-                    document.getElementById("add-UserName").value = UserName;
-                    window.location.href = "#add-Trainers-pop";
+                case '1': {
+                    document.getElementById("Add-UserName").value = UserName;
+                    window.location.href = "#Add-Trainers-pop";
                     break;
                 }
-                case 2: {
+                case '2': {
                     document.getElementById("UserName").value = UserName;
-                    window.location.href = "#add-Coaches-pop";
+                    window.location.href = "#Add-Coaches-pop";
                     break;
                 }
-                case 3: {
-                    document.getElementById("add-Maneger-UserName").value = UserName;
-                    window.location.href = "#add-Maneger-pop";
+                case '3': {
+                    document.getElementById("Add-Maneger-UserName").value = UserName;
+                    window.location.href = "#Add-Maneger-pop";
                     break;
                 }
             }
@@ -37,9 +37,10 @@ function SetUserName() {
 }
 
 function verifyUserName() {
+
     var UserName = document.getElementById("UserName").value;
     var Password = document.getElementById("Password").value;
-
+    UserName += Flag;
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + UserName + "/" + Password, true);
 
@@ -48,17 +49,17 @@ function verifyUserName() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response == 'true') {
                 switch (Flag) {
-                    case 1: {
+                    case '1': {
                         getTrainersInfo();
                         window.location.href = "#Main-Trainers";
                         break;
                     }
-                    case 2: {
+                    case '2': {
                         getCoachesInfo();
                         window.location.href = "#Main-Coaches";
                         break;
                     }
-                    case 3: {
+                    case '3': {
                         getManegerInfo();
                         window.location.href = "#Main-Maneger";
                         break;
@@ -77,15 +78,15 @@ function verifyUserName() {
 }
 function FlagTrainersPage() {
     document.getElementById("NewMembers").innerText = "New Trainer";
-    Flag = 1;
+    Flag = '1';
 }
 function FlagCoachesPage() {
     document.getElementById("NewMembers").innerText = "New Coach"
-    Flag = 2;
+    Flag = '2';
 }
 function FlagManegerPage() {
     document.getElementById("NewMembers").innerText = "New Maneger"
-    Flag = 3;
+    Flag = '3';
 }
 
 function getAllTrainers() {

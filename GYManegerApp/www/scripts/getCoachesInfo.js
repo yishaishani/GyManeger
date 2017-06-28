@@ -1,7 +1,7 @@
 ﻿function getCoachesInfo() {
 
     var UserName = document.getElementById("UserName").value;
-
+    UserName += "2";
     var xhttp = new XMLHttpRequest();
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
@@ -24,7 +24,7 @@
 
         }
     };
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Coaches/" + UserName, true);
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Coaches/" + UserName , true);
     xhttp.send();
 
 }
