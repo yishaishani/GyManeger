@@ -1,7 +1,7 @@
 ﻿var flagManeger = 0;
 function getManegerInfo() {
     if (!flagManeger) {
-        var username = document.getElementById("username").value;
+        var username = document.getElementById("add-maneger-username").value;
 
         var xhttp = new XMLHttpRequest();
         xhttp.responseType = "json";
@@ -83,7 +83,7 @@ function addManeger() {
             document.getElementById("add-maneger-LastName").value = "";
             document.getElementById("add-maneger-PhoneNumber").value = "";
             document.getElementById("add-maneger-Email").value = "";
-            document.getElementById("add-maneger-username").value = "";
+            getManegerInfo();
         }
     }
 

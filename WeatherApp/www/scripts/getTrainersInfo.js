@@ -87,6 +87,7 @@ function addTrainers() {
             document.getElementById("add-PhoneNumber").value = "";
             document.getElementById("add-Email").value = "";
             document.getElementById("add-username").value = "";
+            getTrainersInfo();
         }
     }
 

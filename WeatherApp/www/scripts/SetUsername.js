@@ -1,20 +1,37 @@
 ﻿var flag = 0;
+
 function SetUsername() {
-    
+
     var username = document.getElementById("usernameLOG").value;
     var password = document.getElementById("passwordLOG").value;
 
-    
+
     var xhttp = new XMLHttpRequest();
-    
+
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + username, true);
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({password}));
-   
+    xhttp.send(JSON.stringify({ password }));
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location.href = "#main-trainers";
+            switch (flag) {
+                case 1: {
+                    document.getElementById("add-username").value = username;
+                    window.location.href = "#add-trainers-pop";
+                    break;
+                }
+                case 2: {
+                    document.getElementById("UserName").value = username;
+                    window.location.href = "#add-coaches-pop";
+                    break;
+                }
+                case 3: {
+                    document.getElementById("add-maneger-username").value = username;
+                    window.location.href = "#add-maneger-pop";
+                    break;
+                }
+            }
         }
     }
 }
@@ -59,12 +76,15 @@ function verifyUserName() {
 
 }
 function flagTrainersPage() {
+    document.getElementById("NewMembers").innerText = "NEW TRAINER";
     flag = 1;
 }
 function flagCoachesPage() {
+    document.getElementById("NewMembers").innerText = "NEW COACH"
     flag = 2;
 }
 function flagManegerPage() {
+    document.getElementById("NewMembers").innerText = "NEW MANEGER"
     flag = 3;
 }
 

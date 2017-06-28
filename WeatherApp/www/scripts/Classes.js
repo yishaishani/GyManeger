@@ -96,8 +96,9 @@ function getAllTrainersSchedule() {
 
 function getCoachesForClasses() {
     document.getElementById("getCoachesForTheClasses").innerText = "";
-    var FirstDivToHiddenShow = document.getElementById("FirstHiddenShow");
+    document.getElementById("FirstHiddenShow").style.display = 'block';
     var SecondDivToHiddenShow = document.getElementById("SecondHiddenShow");
+
     
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Coaches/all", true);
@@ -106,7 +107,7 @@ function getCoachesForClasses() {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var obj = JSON.parse(this.response);
-                var array = [obj.map(function (a) { return a.UserName + "\n" })];
+                var array = [obj.map(function (a) { return a.FirstName + "\n" })];
                 for (i = 0; i < array[0].length; i++) {
                     document.getElementById("getCoachesForTheClasses").innerText += array[0][i];
                 }
@@ -144,7 +145,18 @@ function SaveClass() {
                     alert("good!")
                 }
             }
-            
+            var xhttp3 = new XMLHttpRequest();
+
+            xhttp3.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/UpdateID", true);
+            xhttp3.setRequestHeader("Content-type", "application/json");
+
+
+            xhttp3.send(JSON.stringify({ TrainersUserName, ID }));
+            xhttp3.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert("good update!")
+                }
+            }
         }
     }
 }

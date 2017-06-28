@@ -19,6 +19,7 @@
             document.getElementById("LastName").value = "";
             document.getElementById("DayOfWork").value = "";
             document.getElementById("UserName").value = "";
+            getCoachesInfo();
         }
     }
            
