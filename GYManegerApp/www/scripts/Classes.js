@@ -1,7 +1,7 @@
 ﻿
 function AddCoachesClasses()
 {
-    var UserName = document.getElementById("username").value;
+    var UserName = document.getElementById("UserName").value;
     var StartTime = document.getElementById("StartTime").value;
     var EndTime = document.getElementById("EndTime").value;
 
@@ -23,7 +23,7 @@ function AddCoachesClasses()
 function getAllCoachesSchedule() {
     document.getElementById("getStartTime").innerText = "";
     document.getElementById("getTranierUserName").innerText = "";
-    var UserName = document.getElementById("username").value;
+    var UserName = document.getElementById("UserName").value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "http://yishai-001-site1.atempurl.com/CoachesSchedule/all/" + UserName, true);
 
@@ -75,7 +75,7 @@ function AddTrainersClasses() {
 function getAllTrainersSchedule() {
         document.getElementById("getStartTime").innerText = "";
         document.getElementById("getTranierUserName").innerText = "";
-        var UserName = document.getElementById("username").value;
+        var UserName = document.getElementById("UserName").value;
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://yishai-001-site1.atempurl.com/CoachesSchedule/allTrainers/" + UserName, true);
 
@@ -132,7 +132,7 @@ function SaveClass() {
             var EndTime = obj[0].EndTime;
             var UserName = obj[0].UserName;
             var ID = obj[0].ID;
-            var TrainersUserName = document.getElementById("username").value;
+            var TrainersUserName = document.getElementById("UserName").value;
             var xhttp2 = new XMLHttpRequest();
             
             xhttp2.open("POST", "http://yishai-001-site1.atempurl.com/TrainersSchedule/add/" + TrainersUserName, true);

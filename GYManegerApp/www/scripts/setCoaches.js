@@ -14,7 +14,7 @@
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location = "#main-maneger"
+            window.location = "#Main-Maneger"
             document.getElementById("FirstName").value = "";
             document.getElementById("LastName").value = "";
             document.getElementById("DayOfWork").value = "";
@@ -44,17 +44,17 @@ function getCoaches() {
 }
 
 function delCoaches(){
-    var userName = document.getElementById("UserName-del").value;
+    var UserName = document.getElementById("UserName-del").value;
 
     var xhttp = new XMLHttpRequest();
     
-    xhttp.open("DELETE", "http://yishai-001-site1.atempurl.com/Coaches/"+userName, true);
+    xhttp.open("DELETE", "http://yishai-001-site1.atempurl.com/Coaches/"+UserName, true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location = "#main-maneger"
+            window.location = "#Main-Maneger"
             document.getElementById("UserName-del").value = "";
             
         }

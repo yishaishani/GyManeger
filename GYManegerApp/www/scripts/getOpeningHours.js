@@ -1,9 +1,9 @@
 ﻿$(document.getElementsById('#openingHours')).readyState(function(){
-        getOpening();
+        GetOpening();
     });
-var flagOpen = 0;
-function getOpening() {
-    if (!flagOpen)
+var FlagOpen = 0;
+function GetOpening() {
+    if (!FlagOpen)
         {
     var xhttp = new XMLHttpRequest();
     xhttp.responseType = "json";
@@ -16,7 +16,7 @@ function getOpening() {
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("dayHours").innerText += array[0][i];
                 document.getElementById("openingHours").innerText += array1[0][i];
-                flagOpen = 1;
+                FlagOpen = 1;
             }
         }
     
