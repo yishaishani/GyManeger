@@ -80,7 +80,7 @@ function AddTrainers() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location = "#Main-Maneger"
+            window.location = "#Main-Manager"
             document.getElementById("Add-FirstName").value = "";
             document.getElementById("Add-LastName").value = "";
             document.getElementById("Add-Gender").value = "";
@@ -106,7 +106,7 @@ function delTrainers() {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.response);
-                window.location = "#Main-Maneger"
+                window.location = "#Main-Manager"
                 document.getElementById("UserName-Trainers-del").value = "";
             }
         };

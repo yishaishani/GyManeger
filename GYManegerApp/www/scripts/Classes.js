@@ -2,8 +2,9 @@
 function AddCoachesClasses()
 {
     var UserName = document.getElementById("UserName").value;
-    var StartTime = document.getElementById("StartTime").value;
-    var EndTime = document.getElementById("EndTime").value;
+    var StartTime = document.getElementById("StartDate").value + " " + document.getElementById("StartHours").value;
+    var EndTime = document.getElementById("EndDate").value + " " + document.getElementById("EndHours").value;
+
     UserName += "2";
     var xhttp = new XMLHttpRequest();
     

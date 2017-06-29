@@ -27,8 +27,8 @@ function SetUserName() {
                     break;
                 }
                 case '3': {
-                    document.getElementById("Add-Maneger-UserName").value = UserName;
-                    window.location.href = "#Add-Maneger-pop";
+                    document.getElementById("Add-Manager-UserName").value = UserName;
+                    window.location.href = "#Add-Manager-pop";
                     break;
                 }
             }
@@ -60,8 +60,8 @@ function verifyUserName() {
                         break;
                     }
                     case '3': {
-                        getManegerInfo();
-                        window.location.href = "#Main-Maneger";
+                        getManagerInfo();
+                        window.location.href = "#Main-Manager";
                         break;
                     }
                 }
@@ -84,8 +84,8 @@ function FlagCoachesPage() {
     document.getElementById("NewMembers").innerText = "New Coach"
     Flag = '2';
 }
-function FlagManegerPage() {
-    document.getElementById("NewMembers").innerText = "New Maneger"
+function FlagManagerPage() {
+    document.getElementById("NewMembers").innerText = "New Manager"
     Flag = '3';
 }
 

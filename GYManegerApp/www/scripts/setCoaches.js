@@ -14,7 +14,7 @@
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location = "#Main-Maneger"
+            window.location = "#Main-Manager"
             document.getElementById("FirstName").value = "";
             document.getElementById("LastName").value = "";
             document.getElementById("DayOfWork").value = "";
@@ -54,7 +54,7 @@ function delCoaches(){
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);
-            window.location = "#Main-Maneger"
+            window.location = "#Main-Manager"
             document.getElementById("UserName-del").value = "";
             
         }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "GYManegerApp", "GYManegerApp\GYManegerApp.jsproj", "{4F6E8325-A0C2-444A-AB0E-050819AEC9E1}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "GYManagerApp", "GYManegerApp\GYManagerApp.jsproj", "{4F6E8325-A0C2-444A-AB0E-050819AEC9E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GYManagerServer", "..\GyManagerAPI\GManager\GYManagerServer.csproj", "{18D7F198-0C20-4EBF-A05A-82D6F69C74ED}"
 EndProject

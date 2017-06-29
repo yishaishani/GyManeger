@@ -19,7 +19,7 @@
     <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
     <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
     <script type="text/javascript" src="scripts/getCoachesInfo.js"></script>
-    <script type="text/javascript" src="scripts/Maneger.js"></script>
+    <script type="text/javascript" src="scripts/Manager.js"></script>
     <script type="text/javascript" src="scripts/Classes.js"></script>
 </head>
 
@@ -38,7 +38,7 @@
         
         <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagTrainersPage()">Trainers Zone</a></p>
         <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagCoachesPage()">Coaches Zone</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagManegerPage()">Maneger Zone</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagManagerPage()">Manager Zone</a></p>
         <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="GetOpening()">Opening Hours</a></p>
         <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all">About</a></p>
     </div><!-- /content -->
@@ -83,11 +83,11 @@
 	</div><!-- /footer -->
 </div><!-- /page Main-Coaches -->
 
-<!-- Start of Main-Maneger page: #Main-Maneger -->
-    <div data-role="page" id="Main-Maneger" data-theme="a">
+<!-- Start of Main-Manager page: #Main-Manager -->
+    <div data-role="page" id="Main-Manager" data-theme="a">
 
         <div data-role="header">
-            <h1>Main Maneger</h1>
+            <h1>Main Manager</h1>
         </div><!-- /header -->
 
         <form>
@@ -95,17 +95,17 @@
            
         </form>
         
-        <p><a href="#Maneger-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
+        <p><a href="#Manager-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
         <p><a href="#Manager-Coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop"  onclick="clearDivAllCoaches()">Coaches</a></p>
         <p><a href="#Manager-Trainers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllTrainers()">Trainers</a></p>
-        <p><a href="#Manager-Manegers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllManeger()">Maneger</a></p>
+        <p><a href="#Manager-Managers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllManager()">Manager</a></p>
         <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">Opening Hours</a></p>
         
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Main-Maneger -->
+    </div><!-- /page Main-Manager -->
 
 <!-- Start of opening-pop page: #opening-pop -->
 <div data-role="page" id="opening-pop">
@@ -243,46 +243,46 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page mambers-info -->
 
-<!-- Start of Maneger-info page: #Maneger-info -->
-    <div data-role="page" id="Maneger-info" data-theme="a">
+<!-- Start of Manager-info page: #Manager-info -->
+    <div data-role="page" id="Manager-info" data-theme="a">
 
         <div data-role="header">
-            <h1>Maneger Info</h1>
+            <h1>Manager Info</h1>
         </div><!-- /header -->
         <table>
             <tr>
                 <td>First Name:</td>
-                <td id="FirstName-Maneger"></td>
+                <td id="FirstName-Manager"></td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td id="LastName-Maneger"></td>
+                <td id="LastName-Manager"></td>
             </tr>
             
             <tr>
                 <td>Phone Numbers:</td>
-                <td id="Phone-Numbers-Maneger"></td>
+                <td id="Phone-Numbers-Manager"></td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td id="Email-Maneger"></td>
+                <td id="Email-Manager"></td>
             </tr>
             <tr>
                 <td>UserName:</td>
-                <td id="UserName-Maneger"></td>
+                <td id="UserName-Manager"></td>
             </tr>
 
         </table>
 
 
-        <p><a href="#Edit-Maneger-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getManegerInfoToEdit()">Edit Info</a></p>
+        <p><a href="#Edit-Manager-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getManagerInfoToEdit()">Edit Info</a></p>
 
 
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Maneger-info -->
+    </div><!-- /page Manager-info -->
 
 <!-- Start of Edit-Trainers-info-pop page: #Edit-Trainers-info-pop -->
     <div data-role="page" id="Edit-Trainers-info-pop">
@@ -306,28 +306,28 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page Edit-Trainers-info-pop -->
 
-<!-- Start of Edit-Maneger-info-pop page: #Edit-Maneger-info-pop -->
-    <div data-role="page" id="Edit-Maneger-info-pop">
+<!-- Start of Edit-Manager-info-pop page: #Edit-Manager-info-pop -->
+    <div data-role="page" id="Edit-Manager-info-pop">
 
         <div data-role="header" data-theme="b">
-            <h1>Edit Maneger Info</h1>
+            <h1>Edit Manager Info</h1>
         </div><!-- /header -->
 
         <div role="Main" class="ui-content">
-            <input type="text" placeholder="FIRST NAME:" id="Edit-Maneger-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="Edit-Maneger-LastName">
-            <input type="text" placeholder="PHONE NUBBER: " id="Edit-Maneger-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Edit-Maneger-Email">
-            <input type="text" placeholder="UserName:" id="Edit-Maneger-UserName">
+            <input type="text" placeholder="FIRST NAME:" id="Edit-Manager-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="Edit-Manager-LastName">
+            <input type="text" placeholder="PHONE NUBBER: " id="Edit-Manager-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Edit-Manager-Email">
+            <input type="text" placeholder="UserName:" id="Edit-Manager-UserName">
 
 
-            <button id="btn_editInfo" class="button" onclick="editManegerInfo()">Save</button>
+            <button id="btn_editInfo" class="button" onclick="editManagerInfo()">Save</button>
         </div><!-- /content -->
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Edit-Maneger-info-pop -->
+    </div><!-- /page Edit-Manager-info-pop -->
 
 <!-- Start of Coaches-info page: #Coaches-info -->
     <div data-role="page" id="Coaches-info" data-theme="a">
@@ -450,21 +450,21 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page Manager-Trainers -->
 
-<!-- Start of Manager-Manegers page: #Manager-Manegers -->
-    <div data-role="page" id="Manager-Manegers" data-theme="a">
+<!-- Start of Manager-Managers page: #Manager-Managers -->
+    <div data-role="page" id="Manager-Managers" data-theme="a">
 
         <div data-role="header">
-            <h1>Manager Manegers</h1>
+            <h1>Manager Managers</h1>
         </div><!-- /header -->
-        <p><a href="#del-Maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Maneger</a></p>
-        <p><a href="#Add-Maneger-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Maneger</a></p>
-        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManeger()">Get All Maneger</button>
+        <p><a href="#del-Manager-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Manager</a></p>
+        <p><a href="#Add-Manager-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Manager</a></p>
+        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManager()">Get All Manager</button>
 
-        <div id="getManeger"></div>
+        <div id="getManager"></div>
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Manager-Manegers -->
+    </div><!-- /page Manager-Managers -->
 
 <!-- Start of Add-Coaches-pop page: #Add-Coaches-pop -->
     <div data-role="page" id="Add-Coaches-pop" data-theme="a">
@@ -552,20 +552,20 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page del-Trainers-pop -->
 
-<!-- Start of Add-Maneger-pop page: #Add-Maneger-pop -->
-    <div data-role="page" id="Add-Maneger-pop" data-theme="a">
+<!-- Start of Add-Manager-pop page: #Add-Manager-pop -->
+    <div data-role="page" id="Add-Manager-pop" data-theme="a">
 
         <div data-role="header">
-            <h1>Add Maneger</h1>
+            <h1>Add Manager</h1>
         </div><!-- /header -->
         <form>
-            <label for="zip-code">Enter Details of new Maneger:</label>
-            <input type="text" placeholder="FIRST NAME:" id="Add-Maneger-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="Add-Maneger-LastName">
-            <input type="text" placeholder="PHONE NUBBER: " id="Add-Maneger-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Add-Maneger-Email">
-            <input type="text" placeholder="UserName:" id="Add-Maneger-UserName">
-            <button type="button" id="btn_insertManeger" class="button" onclick="AddManeger()">Add Maneger</button>
+            <label for="zip-code">Enter Details of new Manager:</label>
+            <input type="text" placeholder="FIRST NAME:" id="Add-Manager-FirstName">
+            <input type="text" placeholder="LAST NAME:" id="Add-Manager-LastName">
+            <input type="text" placeholder="PHONE NUBBER: " id="Add-Manager-PhoneNumber">
+            <input type="text" placeholder="EMAIL:" id="Add-Manager-Email">
+            <input type="text" placeholder="UserName:" id="Add-Manager-UserName">
+            <button type="button" id="btn_insertManager" class="button" onclick="AddManager()">Add Manager</button>
 
 
         </form>
@@ -574,26 +574,26 @@ Give us the opportunity to express you.
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page Add-Maneger-pop -->
+    </div><!-- /page Add-Manager-pop -->
 
-<!-- Start of del-Maneger-pop page: #del-Maneger-pop -->
-    <div data-role="page" id="del-Maneger-pop" data-theme="a">
+<!-- Start of del-Manager-pop page: #del-Manager-pop -->
+    <div data-role="page" id="del-Manager-pop" data-theme="a">
 
         <div data-role="header">
-            <h1>Delete Maneger</h1>
+            <h1>Delete Manager</h1>
         </div><!-- /header -->
         <form>
-            <label for="zip-code">Enter UserName of Maneger to delete:</label>
-            <input type="text" placeholder="UserName" id="UserName-Maneger-del">
+            <label for="zip-code">Enter UserName of Manager to delete:</label>
+            <input type="text" placeholder="UserName" id="UserName-Manager-del">
 
-            <button type="button" id="btn_delManeger" class="button" onclick="delManeger()">Delete Maneger</button>
+            <button type="button" id="btn_delManager" class="button" onclick="delManager()">Delete Manager</button>
         </form>
 
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
-    </div><!-- /page del-Maneger-pop -->
+    </div><!-- /page del-Manager-pop -->
 
 <!-- Start of Add-Coaches-classes page: #Add-Coaches-classes -->
     <div data-role="page" id="Add-Coaches-classes" data-theme="a">
@@ -605,9 +605,13 @@ Give us the opportunity to express you.
             <tr>
 
                 <td>
-                    <div role="Main" class="ui-content">
-                        <input  type="text" placeholder="strat time:" id="StartTime">
-                        <input  type="text" placeholder="end time:" id="EndTime">
+                    <div>
+                        <div>Start Time:</div>
+                        <input type="date" value="2014-02-09" id="StartDate"><span><input type="time" value="08:00" id="StartHours"/></span>
+                    </div>
+                    <div>
+                        <div>End Time:</div>
+                        <input type="date" value="2014-02-09" id="EndDate"><span><input type="time" value="12:00" id="EndHours" /></span>
                     </div>
                 </td>
             </tr>
