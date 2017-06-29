@@ -66,7 +66,7 @@ function AddTrainersClasses() {
             var array2 = [obj.map(function (a) { return a.ID + "\n\n" })];
             var array3 = [obj.map(function (a) { return a.TranierUserName + "\n\n" })];
             for (i = 0; i < array[0].length; i++) {
-                if (obj[i].TranierUserName == 'empty'){
+                if (obj[i].TranierUserName == 'empt'){
                     document.getElementById("getSlotCoachesUserName").innerText += array[0][i];
                     document.getElementById("getSlotStartTime").innerText += array1[0][i];
                     document.getElementById("getSlotID").innerText += array2[0][i];

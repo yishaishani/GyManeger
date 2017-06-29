@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="css/DesignApp.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="js/jquery.js"></script>
 	<script src="_assets/js/index.js"></script>
@@ -36,11 +37,11 @@
 		<h2>Wellcome</h2>
 
         
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagTrainersPage()">Trainers Zone</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagCoachesPage()">Coaches Zone</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="FlagManagerPage()">Manager Zone</a></p>
-        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="GetOpening()">Opening Hours</a></p>
-        <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all">About</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagTrainersPage()">Trainers Zone</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagCoachesPage()">Coaches Zone</a></p>
+        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagManagerPage()">Manager Zone</a></p>
+        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all"  data-rel="dialog" data-transition="pop" onclick="GetOpening()">Opening Hours</a></p>
+        <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all"  data-rel="dialog" data-transition="pop">About</a></p>
     </div><!-- /content -->
 
 	<div data-role="footer" data-theme="a">
@@ -55,9 +56,9 @@
             <h1>Main Trainers</h1>
         </div><!-- /header -->
 
-        <p><a href="#Trainers-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
-        <p><a href="#Add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getCoachesForClasses()">Classes</a></p>
-        <p><a href="#Trainers-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllTrainersSchedule()">My Schedule</a></p>
+        <p><a href="#Trainers-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+        <p><a href="#Add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" onclick="getCoachesForClasses()">Classes</a></p>
+        <p><a href="#Trainers-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllTrainersSchedule()">My Schedule</a></p>
 
 
         <div data-role="footer">
@@ -72,9 +73,9 @@
 		<h1>Main Coaches</h1>
 	</div><!-- /header -->
 
-    <p><a href="#Coaches-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
-    <p><a href="#Add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Classes</a></p>
-    <p><a href="#Coaches-schedule" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getAllCoachesSchedule()">My Schedule</a></p>
+    <p><a href="#Coaches-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+    <p><a href="#Add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all">Add Classes</a></p>
+    <p><a href="#Coaches-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllCoachesSchedule()">My Schedule</a></p>
 
    
 
@@ -95,10 +96,10 @@
            
         </form>
         
-        <p><a href="#Manager-info" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Personal Info</a></p>
-        <p><a href="#Manager-Coaches" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop"  onclick="clearDivAllCoaches()">Coaches</a></p>
-        <p><a href="#Manager-Trainers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllTrainers()">Trainers</a></p>
-        <p><a href="#Manager-Managers" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="clearDivAllManager()">Manager</a></p>
+        <p><a href="#Manager-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+        <p><a href="#Manager-Coaches" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllCoaches()">Coaches</a></p>
+        <p><a href="#Manager-Trainers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllTrainers()">Trainers</a></p>
+        <p><a href="#Manager-Managers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllManager()">Manager</a></p>
         <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">Opening Hours</a></p>
         
 
@@ -108,9 +109,9 @@
     </div><!-- /page Main-Manager -->
 
 <!-- Start of opening-pop page: #opening-pop -->
-<div data-role="page" id="opening-pop">
+<div data-role="page" id="opening-pop" data-theme="a">
 
-	<div data-role="header" data-theme="b">
+	<div data-role="header" >
 		<h1>Opening Hours</h1>
 	</div><!-- /header -->
 
@@ -121,7 +122,7 @@
                 <td id="openingHours"></td>
             </tr>
         </table>
-        <!--<div id="openingHours" ></div>-->
+
 </div><!-- /content -->
 
 	<div data-role="footer">
@@ -132,7 +133,7 @@
 <!-- Start of about-pop page: #about-pop -->
     <div data-role="page" id="about-pop">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="a">
             <h1>About Us</h1>
         </div><!-- /header -->
 
@@ -158,7 +159,7 @@ Give us the opportunity to express you.
 <!-- Start of log-in-pop page: #log-in-pop -->
     <div data-role="page" id="log-in-pop">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="a">
             <h1>Log In</h1>
         </div><!-- /header -->
         <form>
@@ -182,16 +183,16 @@ Give us the opportunity to express you.
 <!-- Start of sign-in-pop page: #sign-in-pop -->
     <div data-role="page" id="sign-in-pop">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="a">
             <h1>Sign In</h1>
         </div><!-- /header -->
         <form>
             <label for="zip-code">Enter your name and Password:</label>
-            <input type="text" placeholder="UserName" id="UserName">
+            <input type="text" class="input" placeholder="UserName" id="UserName">
             <input type="Password" placeholder="Password" id="Password">
             <br /><br /><br /><br />
             <button id="signIn" class="button" onclick="verifyUserName()">Sign In</button>
-            <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" id="NewMembers">New Members</a></p>
+            <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" id="NewMembers">New Members</a></p>
         </form>
         <div role="Main" class="ui-content">
       
@@ -234,7 +235,7 @@ Give us the opportunity to express you.
         </table>
        
 
-        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">Edit Info</a></p>
+        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
 
         
 
@@ -275,7 +276,7 @@ Give us the opportunity to express you.
         </table>
 
 
-        <p><a href="#Edit-Manager-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getManagerInfoToEdit()">Edit Info</a></p>
+        <p><a href="#Edit-Manager-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getManagerInfoToEdit()">Edit Info</a></p>
 
 
 
@@ -287,7 +288,7 @@ Give us the opportunity to express you.
 <!-- Start of Edit-Trainers-info-pop page: #Edit-Trainers-info-pop -->
     <div data-role="page" id="Edit-Trainers-info-pop">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="a">
             <h1>Edit Trainers Info</h1>
         </div><!-- /header -->
 
@@ -309,7 +310,7 @@ Give us the opportunity to express you.
 <!-- Start of Edit-Manager-info-pop page: #Edit-Manager-info-pop -->
     <div data-role="page" id="Edit-Manager-info-pop">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="a">
             <h1>Edit Manager Info</h1>
         </div><!-- /header -->
 
@@ -371,7 +372,7 @@ Give us the opportunity to express you.
         </table>
 
 
-        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getInfoToEdit()">Edit Info</a></p>
+        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
 
 
 
@@ -421,9 +422,9 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Coaches</h1>
         </div><!-- /header -->
-        <p><a href="#Add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Coaches</a></p>
+        <p><a href="#Add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Add Coaches</a></p>
 
-        <p><a href="#del-Coaches-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Coaches</a></p>
+        <p><a href="#del-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Remove Coaches</a></p>
 
         <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">Get All Coaches</button>
 
@@ -440,8 +441,8 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Trainers</h1>
         </div><!-- /header -->
-        <p><a href="#del-Trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Trainers</a></p>
-        <p><a href="#Add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" >Add Trainers</a></p>
+        <p><a href="#del-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Remove Trainers</a></p>
+        <p><a href="#Add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Add Trainers</a></p>
         <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">Get All Trainers</button>
 
         <div id="getTrainers"></div>
@@ -456,8 +457,8 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Managers</h1>
         </div><!-- /header -->
-        <p><a href="#del-Manager-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Remove Manager</a></p>
-        <p><a href="#Add-Manager-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Add Manager</a></p>
+        <p><a href="#del-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Remove Manager</a></p>
+        <p><a href="#Add-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Add Manager</a></p>
         <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManager()">Get All Manager</button>
 
         <div id="getManager"></div>
