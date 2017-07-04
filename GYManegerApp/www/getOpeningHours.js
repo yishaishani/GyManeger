@@ -1,6 +1,6 @@
-﻿$(document.getElementsById('#openingHours')).readyState(function(){
-        GetOpening();
-    });
+﻿//$(document.getElementsById('#openingHours')).readyState(function(){
+//        GetOpening();
+//    });
 var FlagOpen = 0;
 function GetOpening() {
     if (!FlagOpen)
@@ -70,12 +70,14 @@ function updatehours() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/OpeningHours/" + update, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     
-
-    xhttp.send(JSON.stringify({Sunday, Monday ,Tuesday ,Wednesday, Thursday,Friday,Saturday }));
+//{Sunday, Monday ,Tuesday ,Wednesday, Thursday,Friday,Saturday }
+xhttp.send("{\"Sunday\":\"" + Sunday + "\",\"Monday\":\"" + Monday + "\",\"Tuesday\":\"" + Tuesday + "\",\"Wednesday\":\"" + Wednesday + "\",\"Thursday\":\"" + Thursday + "\",\"Friday\":\"" + Friday + "\",\"Saturday\":\"" + Saturday + "\"}");
     
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.response)
+            document.getElementById("Alert-pop-Messege").innerText = this.response;
+            document.getElementById("nextFromAlert").href = "#Main-Manager";
+            window.location.href = "#Alert-pop";
         }
     }
 }

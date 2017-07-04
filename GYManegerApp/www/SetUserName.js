@@ -1,40 +1,43 @@
 ﻿var Flag = 0;
-
+var strVerify = "Verification successful!"+'\n' + "you are taken to the next page..";
 function SetUserName() {
 
     var UserName = document.getElementById("UserNameLOG").value;
     var Password = document.getElementById("PasswordLOG").value;
-    UserName += flag;
+    UserName += Flag;
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + UserName , true);
+    xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + UserName, true);
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({ Password }));
-
+    xhttp.send("{\"Password\":\"" + Password  + "\"}");
+{  }
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.response);
+            document.getElementById("Alert-pop-Messege").innerText = this.response;
             switch (Flag) {
                 case '1': {
                     document.getElementById("Add-UserName").value = UserName;
-                    window.location.href = "#Add-Trainers-pop";
+                    document.getElementById("nextFromAlert").href = "#Add-Trainers-pop";
+                    window.location.href = "#Alert-pop";
                     break;
                 }
                 case '2': {
                     document.getElementById("UserName").value = UserName;
-                    window.location.href = "#Add-Coaches-pop";
+                    document.getElementById("nextFromAlert").href = "#Add-Coaches-pop";
+                    window.location.href = "#Alert-pop";
                     break;
                 }
                 case '3': {
                     document.getElementById("Add-Manager-UserName").value = UserName;
-                    window.location.href = "#Add-Manager-pop";
+                    document.getElementById("nextFromAlert").href = "#Add-Manager-pop";
+                    window.location.href = "#Alert-pop";
                     break;
                 }
             }
         }
     }
-}
+};
 
 function verifyUserName() {
 
@@ -51,43 +54,51 @@ function verifyUserName() {
                 switch (Flag) {
                     case '1': {
                         getTrainersInfo();
-                        window.location.href = "#Main-Trainers";
+                        document.getElementById("Alert-pop-Messege").innerText = strVerify;
+                        document.getElementById("nextFromAlert").href = "#Main-Trainers";
+                        window.location.href = "#Alert-pop";
                         break;
                     }
                     case '2': {
                         getCoachesInfo();
-                        window.location.href = "#Main-Coaches";
+                        document.getElementById("Alert-pop-Messege").innerText = strVerify;
+                        document.getElementById("nextFromAlert").href = "#Main-Coaches";
+                        window.location.href = "#Alert-pop";
                         break;
                     }
                     case '3': {
                         getManagerInfo();
-                        window.location.href = "#Main-Manager";
+                        document.getElementById("Alert-pop-Messege").innerText = strVerify;
+                        document.getElementById("nextFromAlert").href = "#Main-Manager";
+                        window.location.href = "#Alert-pop";
                         break;
                     }
                 }
 
             }
             else {
-                alert("Worng usernamr or Password!")
                 document.getElementById("Password").value = "";
+                document.getElementById("Alert-pop-Messege").innerText = "Worng usernamr or Password!";
+                document.getElementById("nextFromAlert").href = "#Main";
+                window.location.href = "#Alert-pop";
             }
         }
     }
 
 
-}
+};
 function FlagTrainersPage() {
     document.getElementById("NewMembers").innerText = "New Trainer";
     Flag = '1';
-}
+};
 function FlagCoachesPage() {
     document.getElementById("NewMembers").innerText = "New Coach"
     Flag = '2';
-}
+};
 function FlagManagerPage() {
     document.getElementById("NewMembers").innerText = "New Manager"
     Flag = '3';
-}
+};
 
 function getAllTrainers() {
     document.getElementById("getTrainers").innerText = "";

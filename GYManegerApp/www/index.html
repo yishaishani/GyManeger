@@ -4,24 +4,23 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://y0547387610-001-site1.ctempurl.com ws://localhost:35729 data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' localhost:35729 'unsafe-eval' 'unsafe-inline';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://yishai-001-site1.atempurl.com ws://localhost:35729 data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' localhost:35729 'unsafe-eval' 'unsafe-inline';">
 	<title>Multi-page template</title>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<link rel="stylesheet" href="jqm-demos.css">
     <link rel="stylesheet" href="css/DesignApp.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="js/jquery.js"></script>
-	<script src="_assets/js/index.js"></script>
+	<script src="index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
-    <script type="text/javascript" src="scripts/SetUserName.js"></script>
-    <script type="text/javascript" src="scripts/setCoaches.js"></script>
-    <script type="text/javascript" src="scripts/getOpeningHours.js"></script>
-    <script type="text/javascript" src="scripts/getTrainersInfo.js"></script>
-    <script type="text/javascript" src="scripts/getCoachesInfo.js"></script>
-    <script type="text/javascript" src="scripts/Manager.js"></script>
-    <script type="text/javascript" src="scripts/Classes.js"></script>
+    <script type="text/javascript" src="SetUserName.js"></script>
+    <script type="text/javascript" src="setCoaches.js"></script>
+    <script type="text/javascript" src="getOpeningHours.js"></script>
+    <script type="text/javascript" src="getTrainersInfo.js"></script>
+    <script type="text/javascript" src="Manager.js"></script>
+    <script type="text/javascript" src="Classes.js"></script>
+    <script type="text/javascript" src="getCoachesInfo.js"></script>
 </head>
 
 <body>
@@ -35,13 +34,22 @@
 
 	<div role="Main" class="ui-content">
 		<h2>Wellcome</h2>
-
+    <table style="min-width:100%">
+        <tr>
+            <td style="width:20%"></td>
         
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagTrainersPage()">Trainers Zone</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagCoachesPage()">Coaches Zone</a></p>
-        <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagManagerPage()">Manager Zone</a></p>
-        <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all"  data-rel="dialog" data-transition="pop" onclick="GetOpening()">Opening Hours</a></p>
-        <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all"  data-rel="dialog" data-transition="pop">About</a></p>
+            <td style="width:60%">
+                <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagTrainersPage()">Trainers Zone</a></p>
+                <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagCoachesPage()">Coaches Zone</a></p>
+                <p><a href="#sign-in-pop" class="ui-btn ui-shadow ui-corner-all" onclick="FlagManagerPage()">Manager Zone</a></p>
+                <p><a href="#opening-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="GetOpening()">Opening Hours</a></p>
+                <p><a href="#about-pop" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">About</a></p>
+            </td>
+         <td style="width:20%"></td>
+        </tr>
+    </table>
+        
+
     </div><!-- /content -->
 
 	<div data-role="footer" data-theme="a">
@@ -55,10 +63,18 @@
         <div data-role="header">
             <h1>Main Trainers</h1>
         </div><!-- /header -->
-
-        <p><a href="#Trainers-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
-        <p><a href="#Add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" onclick="getCoachesForClasses()">Classes</a></p>
-        <p><a href="#Trainers-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllTrainersSchedule()">My Schedule</a></p>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <p><a href="#Trainers-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+                    <p><a href="#Add-Trainers-classes" class="ui-btn ui-shadow ui-corner-all" onclick="getCoachesForClasses()">Classes</a></p>
+                    <p><a href="#Trainers-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllTrainersSchedule()">My Schedule</a></p>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>
+        
 
 
         <div data-role="footer">
@@ -72,11 +88,19 @@
 	<div data-role="header">
 		<h1>Main Coaches</h1>
 	</div><!-- /header -->
+    <table style="min-width:100%">
+        <tr>
+            <td style="width:20%"></td>
+            <td style="width:60%">
+                <p><a href="#Coaches-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+                <p><a href="#Add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all">Add Classes</a></p>
+                <p><a href="#Coaches-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllCoachesSchedule()">My Schedule</a></p>
 
-    <p><a href="#Coaches-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
-    <p><a href="#Add-Coaches-classes" class="ui-btn ui-shadow ui-corner-all">Add Classes</a></p>
-    <p><a href="#Coaches-schedule" class="ui-btn ui-shadow ui-corner-all" onclick="getAllCoachesSchedule()">My Schedule</a></p>
-
+            </td>
+            <td style="width:20%"></td>
+        </tr>
+    </table>
+    
    
 
 	<div data-role="footer">
@@ -91,18 +115,21 @@
             <h1>Main Manager</h1>
         </div><!-- /header -->
 
-        <form>
-            
-           
-        </form>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <p><a href="#Manager-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
+                    <p><a href="#Manager-Coaches" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllCoaches()">Coaches</a></p>
+                    <p><a href="#Manager-Trainers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllTrainers()">Trainers</a></p>
+                    <p><a href="#Manager-Managers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllManager()">Manager</a></p>
+                    <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">Opening Hours</a></p>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>
         
-        <p><a href="#Manager-info" class="ui-btn ui-shadow ui-corner-all">Personal Info</a></p>
-        <p><a href="#Manager-Coaches" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllCoaches()">Coaches</a></p>
-        <p><a href="#Manager-Trainers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllTrainers()">Trainers</a></p>
-        <p><a href="#Manager-Managers" class="ui-btn ui-shadow ui-corner-all" onclick="clearDivAllManager()">Manager</a></p>
-        <p><a href="#update-hours" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop" onclick="getOpeningHours()">Opening Hours</a></p>
         
-
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -114,16 +141,24 @@
 	<div data-role="header" >
 		<h1>Opening Hours</h1>
 	</div><!-- /header -->
+    <table style="min-width:100%">
+        <tr>
+            <td style="width:10%"></td>
+            <td style="width:60%">
+                <div role="Main" class="ui-content">
+                    <table>
+                        <tr>
+                            <td id="dayHours"></td>
+                            <td id="openingHours"></td>
+                        </tr>
+                    </table>
 
-	<div role="Main" class="ui-content">
-		<table>
-            <tr>
-                <td id="dayHours"></td>
-                <td id="openingHours"></td>
-            </tr>
-        </table>
-
-</div><!-- /content -->
+                </div><!-- /content -->
+            </td>
+            <td style="width:10%"></td>
+        </tr>
+    </table>
+	
 
 	<div data-role="footer">
 		<h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
@@ -162,18 +197,24 @@ Give us the opportunity to express you.
         <div data-role="header" data-theme="a">
             <h1>Log In</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter your name and Password:</label>
-            <input type="text" placeholder="UserName" id="UserNameLOG">
-            <input type="Password" placeholder="Password" id="PasswordLOG">
-            <br /><br /><br /><br />
-            <button id="logIn" class="button" onclick="SetUserName()">log - in</button>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <form>
+                        <label for="zip-code">Enter your name and Password:</label>
+                        <input type="text" placeholder="UserName" id="UserNameLOG">
+                        <input type="Password" placeholder="Password" id="PasswordLOG">
+                        <br /><br />
+                        <button id="logIn" class="button" onclick="SetUserName()">log - in</button>
 
-        </form>
-        <div role="Main" class="ui-content">
-        
+                    </form>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+   
 
-        </div><!-- /content -->
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
@@ -186,18 +227,24 @@ Give us the opportunity to express you.
         <div data-role="header" data-theme="a">
             <h1>Sign In</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter your name and Password:</label>
-            <input type="text" class="input" placeholder="UserName" id="UserName">
-            <input type="Password" placeholder="Password" id="Password">
-            <br /><br /><br /><br />
-            <button id="signIn" class="button" onclick="verifyUserName()">Sign In</button>
-            <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" id="NewMembers">New Members</a></p>
-        </form>
-        <div role="Main" class="ui-content">
-      
-
-        </div><!-- /content -->
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <form>
+                        <label for="zip-code">Enter your name and Password:</label>
+                        <input type="text" class="input" placeholder="UserName" id="UserName">
+                        <input type="Password" placeholder="Password" id="Password">
+                        <br /><br />
+                        <button id="signIn" class="button" onclick="verifyUserName()">Sign In</button>
+                        <p><a href="#log-in-pop" class="ui-btn ui-shadow ui-corner-all" id="NewMembers">New Members</a></p>
+                    </form>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+   
+        
          <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -209,34 +256,43 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Trainers Info</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-                <td>First Name:</td>
-                <td id="FirstName-Trainers"></td>
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td id="LastName-Trainers"></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td id="Gender-Trainers"></td>
-            </tr>
-            <tr>
-                <td>Phone Number:</td>
-                <td id="Phone-Numbers-Trainers"></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td id="Email-Trainers"></td>
-            </tr>
-            
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+                            <td>First Name:</td>
+                            <td id="FirstName-Trainers"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td id="LastName-Trainers"></td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td id="Gender-Trainers"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number:</td>
+                            <td id="Phone-Numbers-Trainers"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="Email-Trainers"></td>
+                        </tr>
 
-        </table>
-       
 
-        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
+                    </table>
 
+
+                    <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
+
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>    
+    
         
 
         <div data-role="footer">
@@ -250,34 +306,43 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Info</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-                <td>First Name:</td>
-                <td id="FirstName-Manager"></td>
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td id="LastName-Manager"></td>
-            </tr>
-            
-            <tr>
-                <td>Phone Numbers:</td>
-                <td id="Phone-Numbers-Manager"></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td id="Email-Manager"></td>
-            </tr>
-            <tr>
-                <td>UserName:</td>
-                <td id="UserName-Manager"></td>
-            </tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+                            <td>First Name:</td>
+                            <td id="FirstName-Manager"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td id="LastName-Manager"></td>
+                        </tr>
 
-        </table>
+                        <tr>
+                            <td>Phone Numbers:</td>
+                            <td id="Phone-Numbers-Manager"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="Email-Manager"></td>
+                        </tr>
+                        <tr>
+                            <td>UserName:</td>
+                            <td id="UserName-Manager"></td>
+                        </tr>
+
+                    </table>
 
 
-        <p><a href="#Edit-Manager-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getManagerInfoToEdit()">Edit Info</a></p>
+                    <p><a href="#Edit-Manager-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getManagerInfoToEdit()">Edit Info</a></p>
 
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>   
+     
 
 
         <div data-role="footer">
@@ -291,17 +356,25 @@ Give us the opportunity to express you.
         <div data-role="header" data-theme="a">
             <h1>Edit Trainers Info</h1>
         </div><!-- /header -->
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="width:70%">
+                    <div role="Main" class="ui-content">
+                        <input type="text" placeholder="FIRST NAME:" id="Edit-FirstName">
+                        <input type="text" placeholder="LAST NAME:" id="Edit-LastName">
+                        <input type="text" placeholder="GENDER:" id="Edit-Gender">
+                        <input type="text" placeholder="PHONE NUBBER: " id="Edit-PhoneNumber">
+                        <input type="text" placeholder="EMAIL:" id="Edit-Email">
 
-        <div role="Main" class="ui-content">
-            <input type="text" placeholder="FIRST NAME:" id="Edit-FirstName" >
-            <input type="text" placeholder="LAST NAME:" id="Edit-LastName" >
-            <input type="text" placeholder="GENDER:" id="Edit-Gender">
-            <input type="text" placeholder="PHONE NUBBER: " id="Edit-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Edit-Email">
+                        <button id="btn_editInfo" class="button" onclick="editInfo()">Save</button>
+                    </div><!-- /content -->
 
-            <button id="btn_editInfo" class="button" onclick="editInfo()">Save</button>
-        </div><!-- /content -->
-
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>
+        
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -313,17 +386,25 @@ Give us the opportunity to express you.
         <div data-role="header" data-theme="a">
             <h1>Edit Manager Info</h1>
         </div><!-- /header -->
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <div role="Main" class="ui-content">
+                        <input type="text" placeholder="FIRST NAME:" id="Edit-Manager-FirstName">
+                        <input type="text" placeholder="LAST NAME:" id="Edit-Manager-LastName">
+                        <input type="text" placeholder="PHONE NUBBER: " id="Edit-Manager-PhoneNumber">
+                        <input type="text" placeholder="EMAIL:" id="Edit-Manager-Email">
+                        <input type="text" placeholder="UserName:" id="Edit-Manager-UserName">
 
-        <div role="Main" class="ui-content">
-            <input type="text" placeholder="FIRST NAME:" id="Edit-Manager-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="Edit-Manager-LastName">
-            <input type="text" placeholder="PHONE NUBBER: " id="Edit-Manager-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Edit-Manager-Email">
-            <input type="text" placeholder="UserName:" id="Edit-Manager-UserName">
 
-
-            <button id="btn_editInfo" class="button" onclick="editManagerInfo()">Save</button>
-        </div><!-- /content -->
+                        <button id="btn_editInfo" class="button" onclick="editManagerInfo()">Save</button>
+                    </div>
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>
+        <!-- /content -->
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
@@ -336,44 +417,53 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Coaches Info</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-            <th>Day Of Wosking</th>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+                            <th>Day Of Wosking</th>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td id="day1"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td id="day2"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td id="day3"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td id="day4"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td id="day5"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td id="day6"> - </td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td id="day7"> - </td>
+                        </tr>
+
+                    </table>
+
+
+                    <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
+
+                </td>
+                <td style="width:10%"></td>
             </tr>
-            <tr>
-                <td>Sunday</td>
-                <td id="day1"> - </td>
-            </tr> 
-            <tr>
-                <td>Monday</td>
-                <td id="day2"> - </td>
-            </tr> 
-            <tr>
-                <td>Tuesday</td>
-                <td id="day3"> - </td>
-            </tr> 
-            <tr>
-                <td>Wednesday</td>
-                <td id="day4"> - </td>
-            </tr> 
-            <tr>
-                <td>Thursday</td>
-                <td id="day5"> - </td>
-            </tr> 
-            <tr>
-                <td>Friday</td>
-                <td id="day6"> - </td>
-            </tr> 
-            <tr>
-                <td>Saturday</td>
-                <td id="day7"> - </td>
-            </tr> 
-
-        </table>
-
-
-        <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
-
+        </table>    
+    
 
 
         <div data-role="footer">
@@ -387,30 +477,35 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Update Hours</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-                
-                <td>
-                <div role="Main" class="ui-content">
-                    <input name="editDay" type="text" placeholder="sunday:" id="Edit-sunday">
-                    <input name="editDay" type="text" placeholder="monday:" id="Edit-monday">
-                    <input name="editDay" type="text" placeholder="tuesday:" id="Edit-tuesday">
-                    <input name="editDay" type="text" placeholder="wednesday: " id="Edit-wednesday">
-                    <input name="editDay" type="text" placeholder="thursday:" id="Edit-thursday">
-                    <input name="editDay" type="text" placeholder="friday:" id="Edit-friday">
-                    <input name="editDay" type="text" placeholder="saturday:" id="Edit-saturday">
- 
-              </div>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+
+                            <td>
+                                <div role="Main" class="ui-content">
+                                    <input name="editDay" type="text" placeholder="sunday:" id="Edit-sunday">
+                                    <input name="editDay" type="text" placeholder="monday:" id="Edit-monday">
+                                    <input name="editDay" type="text" placeholder="tuesday:" id="Edit-tuesday">
+                                    <input name="editDay" type="text" placeholder="wednesday: " id="Edit-wednesday">
+                                    <input name="editDay" type="text" placeholder="thursday:" id="Edit-thursday">
+                                    <input name="editDay" type="text" placeholder="friday:" id="Edit-friday">
+                                    <input name="editDay" type="text" placeholder="saturday:" id="Edit-saturday">
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="btn_updateHours" class="button" onclick="updatehours()">Save</button>
                 </td>
+                <td style="width:10%"></td>
             </tr>
-        </table>   
-        <button id="btn_updateHours" class="button" onclick="updatehours()">Save</button>
+        </table>    
+   
     <!-- /content -->
-        
-        
-
-
-
+     
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -422,13 +517,19 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Coaches</h1>
         </div><!-- /header -->
-        <p><a href="#Add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Add Coaches</a></p>
-
-        <p><a href="#del-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Remove Coaches</a></p>
-
-        <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">Get All Coaches</button>
-
-        <div id="getCoaches"></div>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <p><a href="#Add-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Add Coaches</a></p>
+                    <p><a href="#del-Coaches-pop" class="ui-btn ui-shadow ui-corner-all">Remove Coaches</a></p>
+                    <button type="button" id="btn_GetCoaches" class="button" onclick="getCoaches()">Get All Coaches</button>
+                    <div id="getCoaches"></div>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>
+     
       
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
@@ -441,11 +542,20 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Trainers</h1>
         </div><!-- /header -->
-        <p><a href="#del-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Remove Trainers</a></p>
-        <p><a href="#Add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Add Trainers</a></p>
-        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">Get All Trainers</button>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <p><a href="#del-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Remove Trainers</a></p>
+                    <p><a href="#Add-Trainers-pop" class="ui-btn ui-shadow ui-corner-all">Add Trainers</a></p>
+                    <button type="button" id="btn_GetTrainers" class="button" onclick="getAllTrainers()">Get All Trainers</button>
 
-        <div id="getTrainers"></div>
+                    <div id="getTrainers"></div>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+    
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -457,11 +567,20 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Manager Managers</h1>
         </div><!-- /header -->
-        <p><a href="#del-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Remove Manager</a></p>
-        <p><a href="#Add-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Add Manager</a></p>
-        <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManager()">Get All Manager</button>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <p><a href="#del-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Remove Manager</a></p>
+                    <p><a href="#Add-Manager-pop" class="ui-btn ui-shadow ui-corner-all">Add Manager</a></p>
+                    <button type="button" id="btn_GetTrainers" class="button" onclick="getAllManager()">Get All Manager</button>
 
-        <div id="getManager"></div>
+                    <div id="getManager"></div>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+    
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
         </div><!-- /footer -->
@@ -473,16 +592,24 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Add Coaches</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter your details:</label>
-            <input type="text" placeholder="Firstname" id="FirstName">
-            <input type="text" placeholder="Lestname" id="LastName">
-            <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
-            <input type="text" placeholder="UserName" id="UserName">
-
-            <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">Add Coach</button>
-
-        </form>
+     
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <form>
+                        <label for="zip-code">Enter your details:</label>
+                        <input type="text" placeholder="Firstname" id="FirstName">
+                        <input type="text" placeholder="Lestname" id="LastName">
+                        <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
+                        <input type="text" placeholder="UserName" id="UserName">
+                        <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">Add Coach</button>
+                    </form>
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>   
+    
 
 
         <div data-role="footer">
@@ -496,13 +623,22 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Delete Coach</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter UserName of Coach to delete:</label>
-            <input type="text" placeholder="UserName" id="UserName-del">
-            
-            <button type="button" id="btn_delCoaches" class="button" onclick="delCoaches()">Delete Coach</button>
-        </form>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <form>
+                        <label for="zip-code">Enter UserName of Coach to delete:</label>
+                        <input type="text" placeholder="UserName" id="UserName-del">
 
+                        <button type="button" id="btn_delCoaches" class="button" onclick="delCoaches()">Delete Coach</button>
+                    </form>
+
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+    
 
         <div data-role="footer">
             <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
@@ -515,18 +651,27 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Add Trainers</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter details of new Trainers:</label>
-            <input type="text" placeholder="FIRST NAME:" id="Add-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="Add-LastName">
-            <input type="text" placeholder="GENDER:" id="Add-Gender">
-            <input type="text" placeholder="PHONE NUBBER: " id="Add-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Add-Email">
-            <input type="text" placeholder="UserName:" id="Add-UserName">
-            <button type="button" id="btn_insertCoaches" class="button" onclick="AddTrainers()">Add Trainers</button>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <form>
+                        <label for="zip-code">Enter details of new Trainers:</label>
+                        <input type="text" placeholder="FIRST NAME:" id="Add-FirstName">
+                        <input type="text" placeholder="LAST NAME:" id="Add-LastName">
+                        <input type="text" placeholder="GENDER:" id="Add-Gender">
+                        <input type="text" placeholder="PHONE NUBBER: " id="Add-PhoneNumber">
+                        <input type="text" placeholder="EMAIL:" id="Add-Email">
+                        <input type="text" placeholder="UserName:" id="Add-UserName">
+                        <button type="button" id="btn_insertCoaches" class="button" onclick="AddTrainers()">Add Trainers</button>
 
 
-        </form>
+                    </form>
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>   
+    
 
 
         <div data-role="footer">
@@ -540,12 +685,21 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Delete Trainers</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter UserName of Trainers to delete:</label>
-            <input type="text" placeholder="UserName" id="UserName-Trainers-del">
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <form>
+                        <label for="zip-code">Enter UserName of Trainers to delete:</label>
+                        <input type="text" placeholder="UserName" id="UserName-Trainers-del">
 
-            <button type="button" id="btn_delTrainers" class="button" onclick="delTrainers()">Delete Trainers</button>
-        </form>
+                        <button type="button" id="btn_delTrainers" class="button" onclick="delTrainers()">Delete Trainers</button>
+                    </form>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>    
+   
 
 
         <div data-role="footer">
@@ -559,17 +713,26 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Add Manager</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter Details of new Manager:</label>
-            <input type="text" placeholder="FIRST NAME:" id="Add-Manager-FirstName">
-            <input type="text" placeholder="LAST NAME:" id="Add-Manager-LastName">
-            <input type="text" placeholder="PHONE NUBBER: " id="Add-Manager-PhoneNumber">
-            <input type="text" placeholder="EMAIL:" id="Add-Manager-Email">
-            <input type="text" placeholder="UserName:" id="Add-Manager-UserName">
-            <button type="button" id="btn_insertManager" class="button" onclick="AddManager()">Add Manager</button>
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <form>
+                        <label for="zip-code">Enter Details of new Manager:</label>
+                        <input type="text" placeholder="FIRST NAME:" id="Add-Manager-FirstName">
+                        <input type="text" placeholder="LAST NAME:" id="Add-Manager-LastName">
+                        <input type="text" placeholder="PHONE NUBBER: " id="Add-Manager-PhoneNumber">
+                        <input type="text" placeholder="EMAIL:" id="Add-Manager-Email">
+                        <input type="text" placeholder="UserName:" id="Add-Manager-UserName">
+                        <button type="button" id="btn_insertManager" class="button" onclick="AddManager()">Add Manager</button>
 
 
-        </form>
+                    </form>
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>   
+     
 
 
         <div data-role="footer">
@@ -583,12 +746,21 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Delete Manager</h1>
         </div><!-- /header -->
-        <form>
-            <label for="zip-code">Enter UserName of Manager to delete:</label>
-            <input type="text" placeholder="UserName" id="UserName-Manager-del">
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="width:60%">
+                    <form>
+                        <label for="zip-code">Enter UserName of Manager to delete:</label>
+                        <input type="text" placeholder="UserName" id="UserName-Manager-del">
 
-            <button type="button" id="btn_delManager" class="button" onclick="delManager()">Delete Manager</button>
-        </form>
+                        <button type="button" id="btn_delManager" class="button" onclick="delManager()">Delete Manager</button>
+                    </form>
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>   
+     
 
 
         <div data-role="footer">
@@ -602,22 +774,31 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Add Coach classes</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
 
-                <td>
-                    <div>
-                        <div>Start Time:</div>
-                        <input type="date" value="2014-02-09" id="StartDate"><span><input type="time" value="08:00" id="StartHours"/></span>
-                    </div>
-                    <div>
-                        <div>End Time:</div>
-                        <input type="date" value="2014-02-09" id="EndDate"><span><input type="time" value="12:00" id="EndHours" /></span>
-                    </div>
+                            <td>
+                                <div>
+                                    <div>Start Time:</div>
+                                    <input type="date" value="2014-02-09" id="StartDate"><span><input type="time" value="08:00" id="StartHours" /></span>
+                                </div>
+                                <div>
+                                    <div>End Time:</div>
+                                    <input type="date" value="2014-02-09" id="EndDate"><span><input type="time" value="12:00" id="EndHours" /></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="btn_AddCoachesClasses" class="button" onclick="AddCoachesClasses()">Add</button>
                 </td>
+                <td style="width:10%"></td>
             </tr>
-        </table>
-        <button id="btn_AddCoachesClasses" class="button" onclick="AddCoachesClasses()">Add</button>
+        </table>   
+     
         <!-- /content -->
 
         <div data-role="footer">
@@ -631,23 +812,32 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Coach schedule</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-                <td> Trainer: </td>
-                <td> Start At: </td>
-                <td> Class number: </td>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+                            <td> Trainer: </td>
+                            <td> Start At: </td>
+                            <td> Class number: </td>
+                        </tr>
+                        <tr>
+                            <td id="getTranierUserName"></td>
+                            <td id="getStartTime"></td>
+                            <td id="getIDClass"></td>
+                        </tr>
+                    </table>
+                    <button id="btn_ShowDeleteCoachClasses" class="button" onclick="ShowDeleteCoachClass()">To Delete Class</button>
+                    <div id="DivToDeleteCoachClass" style="display:none">
+                        <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteCoachClass" />
+                        <button id="btn_DeleteCoachClasses" class="button" onclick="DeleteCoachClass()">Delete Class</button>
+                    </div>
+                </td>
+                <td style="width:10%"></td>
             </tr>
-            <tr>
-                <td id="getTranierUserName"></td>
-                <td id="getStartTime"></td>
-                <td id="getIDClass"></td>
-            </tr>
-        </table>
-        <button id="btn_ShowDeleteCoachClasses" class="button" onclick="ShowDeleteCoachClass()">To Delete Class</button>
-        <div id="DivToDeleteCoachClass" style="display:none">
-            <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteCoachClass" />
-            <button id="btn_DeleteCoachClasses" class="button" onclick="DeleteCoachClass()">Delete Class</button>
-        </div>
+        </table>   
+     
         <!-- /content -->
 
         <div data-role="footer">
@@ -661,23 +851,32 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Trainers schedule</h1>
         </div><!-- /header -->
-        <table>
+        <table style="min-width:100%">
             <tr>
-                <td> Coach: </td>
-                <td> Start At: </td>
-                <td> Class number: </td>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <table>
+                        <tr>
+                            <td> Coach: </td>
+                            <td> Start At: </td>
+                            <td> Class number: </td>
+                        </tr>
+                        <tr>
+                            <td id="getCoachesUserName"></td>
+                            <td id="getTrainersStartTime"></td>
+                            <td id="getTrainersClassNumber"></td>
+                        </tr>
+                    </table>
+                    <button id="btn_ShowDeleteClasses" class="button" onclick="ShowDeleteClass()">To Delete Class</button>
+                    <div id="DivToDeleteClass" style="display:none">
+                        <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteClass" />
+                        <button id="btn_DeleteClasses" class="button" onclick="DeleteClass()">Delete Class</button>
+                    </div> 
+                </td>
+                <td style="width:10%"></td>
             </tr>
-            <tr>
-                <td id="getCoachesUserName"></td>
-                <td id="getTrainersStartTime"></td>
-                <td id="getTrainersClassNumber"></td>
-            </tr>
-        </table>
-        <button id="btn_ShowDeleteClasses" class="button" onclick="ShowDeleteClass()">To Delete Class</button>
-        <div id="DivToDeleteClass" style="display:none">
-            <input type="text" placeholder="Enter a numbers of class to delete:" id="IDToDeleteClass" />
-            <button id="btn_DeleteClasses" class="button" onclick="DeleteClass()">Delete Class</button>
-        </div> 
+        </table>    
+   
         <!-- /content -->
 
         <div data-role="footer">
@@ -691,46 +890,79 @@ Give us the opportunity to express you.
         <div data-role="header">
             <h1>Add Trainers classes</h1>
         </div><!-- /header -->
-        <div id="FirstHiddenShow">
-            <table>
-                <tr>
-                    <td> Coach: </td>
-                    <td> UserName: </td>
-                </tr>
-                <tr>
-                    <td>
-                            <div id="getCoachesForTheClasses"></div>
-                    </td>
-                    <td>
-                            <div id="getCoachesUserNameForTheClasses"></div>
-                    </td>
-                </tr>
-            </table>
-            <input type="text" placeholder="enter here UserName of Coach:" id="chosenCoach" />
-            <button id="btn_NextAddClasses1" class="button" onclick="AddTrainersClasses()">Next</button>
-        </div>
-        <div id="SecondHiddenShow">
-            <table id="emptyClasses">
-                <tr>
-                    <td> Coach: </td>
-                    <td> Start At: </td>
-                    <td> Numbers Of Class: </td>
-                </tr>
-                <tr>
-                    <td id="getSlotCoachesUserName"></td>
-                    <td id="getSlotStartTime"></td>
-                    <td id="getSlotID"></td>
-                </tr>
-            </table>
-            <input type="text" placeholder="enter a number of class:" id="chosenNumberOfClass" />
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="min-width:60%">
+                    <div id="FirstHiddenShow">
+                        <table>
+                            <tr>
+                                <td> Coach: </td>
+                                <td> UserName: </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div id="getCoachesForTheClasses"></div>
+                                </td>
+                                <td>
+                                    <div id="getCoachesUserNameForTheClasses"></div>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="text" placeholder="enter here UserName of Coach:" id="chosenCoach" />
+                        <button id="btn_NextAddClasses1" class="button" onclick="AddTrainersClasses()">Next</button>
+                    </div>
+                    <div id="SecondHiddenShow">
+                        <table id="emptyClasses">
+                            <tr>
+                                <td> Coach: </td>
+                                <td> Start At: </td>
+                                <td> Numbers Of Class: </td>
+                            </tr>
+                            <tr>
+                                <td id="getSlotCoachesUserName"></td>
+                                <td id="getSlotStartTime"></td>
+                                <td id="getSlotID"></td>
+                            </tr>
+                        </table>
+                        <input type="text" placeholder="enter a number of class:" id="chosenNumberOfClass" />
 
-            <button id="btn_NextAddClasses2" class="button" onclick="SaveClass()">Next</button>
-            </div><!-- /content -->
+                        <button id="btn_NextAddClasses2" class="button" onclick="SaveClass()">Next</button>
+                    </div>
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>    
+    <!-- /content -->
 
             <div data-role="footer">
                 <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
             </div><!-- /footer -->
         </div><!-- /page Add-Trainers-classes -->
+
+<!-- Start of Alert-pop page: #Alert-pop -->
+    <div data-role="dialog" id="Alert-pop" data-theme="a">
+
+        <div data-role="header"  >
+            <h1>Messege</h1>
+        </div><!-- /header -->
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:20%"></td>
+                <td style="min-width:60%">
+                    <h3 id="Alert-pop-Messege">
+                        </h3>
+                    
+                </td>
+                <td style="width:20%"></td>
+            </tr>
+        </table>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4><a href="#one" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" id="nextFromAlert">continue</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Add-Trainers-classes -->
 
 
 </body>

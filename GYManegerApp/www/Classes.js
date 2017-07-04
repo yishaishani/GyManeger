@@ -1,5 +1,4 @@
-﻿
-function AddCoachesClasses()
+﻿function AddCoachesClasses()
 {
     var UserName = document.getElementById("UserName").value;
     var StartTime = document.getElementById("StartDate").value + " " + document.getElementById("StartHours").value;
@@ -11,11 +10,13 @@ function AddCoachesClasses()
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/add", true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
-
-    xhttp.send(JSON.stringify({ UserName, StartTime, EndTime }));
+//{ UserName, StartTime, EndTime }
+xhttp.send("{\"UserName\":\"" + UserName + "\",\"StartTime\":\"" + StartTime + "\",\"EndTime\":\"" + EndTime + "\"}");
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert("good!")
+            document.getElementById("Alert-pop-Messege").innerText = "classes added!";
+            document.getElementById("nextFromAlert").href = "#Main-Coaches";
+            window.location.href = "#Alert-pop";
         }
     }
 
@@ -108,6 +109,7 @@ function getAllTrainersSchedule() {
 
 function getCoachesForClasses() {
     document.getElementById("getCoachesForTheClasses").innerText = "";
+    document.getElementById("getCoachesUserNameForTheClasses").innerText = "";
     document.getElementById("FirstHiddenShow").style.display = 'block';
     var SecondDivToHiddenShow = document.getElementById("SecondHiddenShow");
 
@@ -152,11 +154,10 @@ function SaveClass() {
             xhttp2.open("POST", "http://yishai-001-site1.atempurl.com/TrainersSchedule/add/" + TrainersUserName, true);
             xhttp2.setRequestHeader("Content-type", "application/json");
 
-
-            xhttp2.send(JSON.stringify({ StartTime , EndTime , ID , UserName }));
+//{ StartTime , EndTime , ID , UserName }
+            xhttp2.send("{\"StartTime\":\"" + StartTime + "\",\"EndTime\":\"" + EndTime + "\",\"ID\":\"" + ID + "\",\"UserName\":\"" + UserName + "\"}");
             xhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("good!")
                 }
             }
             var xhttp3 = new XMLHttpRequest();
@@ -164,11 +165,13 @@ function SaveClass() {
             xhttp3.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/UpdateID", true);
             xhttp3.setRequestHeader("Content-type", "application/json");
 
-
-            xhttp3.send(JSON.stringify({ TrainersUserName, ID }));
+//{ TrainersUserName, ID }
+            xhttp3.send("{\"TrainersUserName\":\"" + TrainersUserName   + "\",\"ID\":\"" + ID +  "\"}");
             xhttp3.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("good update!")
+                    document.getElementById("Alert-pop-Messege").innerText = "Class Save!";
+                    document.getElementById("nextFromAlert").href = "#Main-Trainers";
+                    window.location.href = "#Alert-pop";
                 }
             }
         }
@@ -189,10 +192,10 @@ function DeleteClass() {
             var xhttp3 = new XMLHttpRequest();
             xhttp3.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/UpdateID", true);
             xhttp3.setRequestHeader("Content-type", "application/json");
-            xhttp3.send(JSON.stringify({ TrainersUserName, ID }));
+//{ TrainersUserName, ID }
+            xhttp3.send("{\"TrainersUserName\":\"" + TrainersUserName  + "\",\"ID\":\"" + ID + "\"}");
             xhttp3.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("good update!")
                 }
             }
             var xhttp2 = new XMLHttpRequest();
@@ -200,7 +203,9 @@ function DeleteClass() {
             xhttp2.send();
             xhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("Class delete!")
+                    document.getElementById("Alert-pop-Messege").innerText = "Class delete from TrainerSchedule and update the coach!";
+                    document.getElementById("nextFromAlert").href = "#Main-Trainers";
+                    window.location.href = "#Alert-pop";
                 }
             }
         }
@@ -229,7 +234,6 @@ function DeleteCoachClass() {
             xhttp3.send();
             xhttp3.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("Class delete from CoachesSchedule!")
                 }
             }
             var xhttp2 = new XMLHttpRequest();
@@ -237,7 +241,9 @@ function DeleteCoachClass() {
             xhttp2.send();
             xhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("Class delete from TrainersSchedule!")
+                    document.getElementById("Alert-pop-Messege").innerText = "Class delete from CoachesSchedule!";
+                    document.getElementById("nextFromAlert").href = "#Main-Coaches";
+                    window.location.href = "#Alert-pop";
                 }
             }
         }

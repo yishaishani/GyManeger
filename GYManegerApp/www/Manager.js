@@ -50,7 +50,7 @@ function editManagerInfo() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Manager/" + UserName + "/" + firstname + "/" + lastname + "/" + phonenumber, true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({ email }));
+    xhttp.send("{\"email\":\"" + email + "\"}");
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -73,7 +73,8 @@ function AddManager() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Manager/Add/" + firstname, true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({ LastName, PhoneNumber, Email, UserName }));
+//{ LastName, PhoneNumber, Email, UserName }
+xhttp.send("{\"LastName\":\"" + LastName + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}");
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

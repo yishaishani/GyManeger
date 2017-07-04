@@ -8,9 +8,10 @@
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Coaches/" + firstName, true);
     xhttp.setRequestHeader("Content-type", "application/json");
-
-
-    xhttp.send(JSON.stringify({ LastName, DayOfWork, UserName }));
+    //JSON.stringify("{LastName, DayOfWork, UserName}")
+    //var g = JSON.parse("{\"LastName\":\"" + LastName + "\",\"DayOfWork\":\"" + DayOfWork + "\",\"UserName\":\"" + UserName + "\"}");
+    //var g = JSON.stringify({LastName, DayOfWork, UserName});
+    xhttp.send("{\"LastName\":\"" + LastName + "\",\"DayOfWork\":\"" + DayOfWork + "\",\"UserName\":\"" + UserName + "\"}");
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.response);

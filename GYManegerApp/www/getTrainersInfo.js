@@ -51,7 +51,7 @@ function editInfo() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Trainers/" + UserName + "1" + "/" + firstname + "/" + lastname + "/" + gender + "/" + phonenumber, true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({ email }));
+    xhttp.send(JSON.stringify("{\"email\":\"" + email + "\"}"));
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -75,7 +75,8 @@ function AddTrainers() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Trainers/add/"  + firstname , true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({ LastName, Gender,  PhoneNumber , Email , UserName}));
+//{ LastName, Gender,  PhoneNumber , Email , UserName}
+xhttp.send(JSON.stringify("{\"LastName\":\"" + LastName + "\",\"Gender\":\"" + Gender + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}"));
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

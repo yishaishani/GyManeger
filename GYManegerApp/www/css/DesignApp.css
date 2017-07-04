@@ -17,8 +17,6 @@ h4 {
     color: red;
 }
 a {
-    max-width: 50%;
+    max-width: 100%;
 }
-.button {
-    max-width: 60%;
-}
+
