@@ -37,7 +37,7 @@ function SetUserName() {
             }
         }
     }
-};
+}
 
 function verifyUserName() {
 
@@ -86,35 +86,19 @@ function verifyUserName() {
     }
 
 
-};
+}
+
 function FlagTrainersPage() {
     document.getElementById("NewMembers").innerText = "New Trainer";
     Flag = '1';
-};
+}
+
 function FlagCoachesPage() {
     document.getElementById("NewMembers").innerText = "New Coach"
     Flag = '2';
-};
+}
+
 function FlagManagerPage() {
     document.getElementById("NewMembers").innerText = "New Manager"
     Flag = '3';
-};
-
-function getAllTrainers() {
-    document.getElementById("getTrainers").innerText = "";
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Trainers/all", true);
-
-    xhttp.send();
-    xhttp.responseType = "json";
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
-            var array =[obj.map(function (a) { return a.FirstName + "\n" })];
-            for (i = 0; i < array[0].length; i++) {
-                document.getElementById("getTrainers").innerText += array[0][i];
-            }
-        }
-        }
-    };
-
+}

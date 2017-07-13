@@ -20,6 +20,7 @@ function getTrainersInfo() {
         xhttp.send();
     }
 }
+
 function getInfoToEdit() {
     var UserName = document.getElementById("UserName").value;
 
@@ -75,8 +76,8 @@ function AddTrainers() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Trainers/add/"  + firstname , true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-//{ LastName, Gender,  PhoneNumber , Email , UserName}
-xhttp.send(JSON.stringify("{\"LastName\":\"" + LastName + "\",\"Gender\":\"" + Gender + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}"));
+
+    xhttp.send(JSON.stringify("{\"LastName\":\"" + LastName + "\",\"Gender\":\"" + Gender + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}"));
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -117,4 +118,22 @@ function delTrainers() {
 
 function clearDivAllTrainers() {
     document.getElementById("getTrainers").innerText = "";
+}
+
+function getAllTrainers() {
+    document.getElementById("getTrainers").innerText = "";
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Trainers/all", true);
+
+    xhttp.send();
+    xhttp.responseType = "json";
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.response);
+            var array = [obj.map(function (a) { return a.FirstName + "\n" })];
+            for (i = 0; i < array[0].length; i++) {
+                document.getElementById("getTrainers").innerText += array[0][i];
+            }
+        }
+    }
 }

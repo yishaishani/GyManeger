@@ -20,6 +20,7 @@ function getManagerInfo() {
         xhttp.send();
     }
 }
+
 function getManagerInfoToEdit() {
     var UserName = document.getElementById("UserName").value;
     UserName += "3";
@@ -73,8 +74,8 @@ function AddManager() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Manager/Add/" + firstname, true);
 
     xhttp.setRequestHeader("Content-type", "application/json");
-//{ LastName, PhoneNumber, Email, UserName }
-xhttp.send("{\"LastName\":\"" + LastName + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}");
+
+    xhttp.send("{\"LastName\":\"" + LastName + "\",\"PhoneNumber\":\"" + PhoneNumber + "\",\"Email\":\"" + Email + "\",\"UserName\":\"" + UserName + "\"}");
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -128,8 +129,6 @@ function getAllManager() {
         }
     }
 };
-
-
 
 function clearDivAllManager() {
     document.getElementById("getManager").innerText = "";

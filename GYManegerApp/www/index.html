@@ -14,13 +14,12 @@
 	<script src="js/jquery.js"></script>
 	<script src="index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="SetUserName.js"></script>
-    <script type="text/javascript" src="setCoaches.js"></script>
-    <script type="text/javascript" src="getOpeningHours.js"></script>
-    <script type="text/javascript" src="getTrainersInfo.js"></script>
+    <script type="text/javascript" src="UserName.js"></script>
+    <script type="text/javascript" src="Trainers.js"></script>
+    <script type="text/javascript" src="Coaches.js"></script>
     <script type="text/javascript" src="Manager.js"></script>
     <script type="text/javascript" src="Classes.js"></script>
-    <script type="text/javascript" src="getCoachesInfo.js"></script>
+    <script type="text/javascript" src="OpeningHours.js"></script>
 </head>
 
 <body>
@@ -390,6 +389,36 @@ Give us the opportunity to express you.
         </div><!-- /footer -->
     </div><!-- /page Edit-Trainers-info-pop -->
 
+<!-- Start of Edit-Coaches-info-pop page: #Edit-Coaches-info-pop -->
+    <div data-role="page" id="Edit-Coaches-info-pop">
+
+        <div data-role="header" data-theme="a">
+            <img src="images/GYManagerLogo.png" style="width:100%;height:100px;" />
+            <h1>Edit Coaches Info</h1>
+        </div><!-- /header -->
+        <table style="min-width:100%">
+            <tr>
+                <td style="width:10%"></td>
+                <td style="width:70%">
+                    <div role="Main" class="ui-content">
+                        <input type="text" placeholder="FIRST NAME:" id="Edit-FirstName-Coaches">
+                        <input type="text" placeholder="LAST NAME:" id="Edit-LastName-Coaches">
+                        <input type="text" placeholder="DayOfWork: " id="Edit-DayOfWork-Coaches">
+                        <input type="text" placeholder="UserName:" id="Edit-UserName-Coaches">
+
+                        <button id="btn_editInfo" class="button" onclick="editCoachesInfo()">Save</button>
+                    </div><!-- /content -->
+
+                </td>
+                <td style="width:10%"></td>
+            </tr>
+        </table>
+
+        <div data-role="footer">
+            <h4><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back To Main</a></h4>
+        </div><!-- /footer -->
+    </div><!-- /page Edit-Coaches-info-pop -->
+
 <!-- Start of Edit-Manager-info-pop page: #Edit-Manager-info-pop -->
     <div data-role="page" id="Edit-Manager-info-pop">
 
@@ -469,7 +498,7 @@ Give us the opportunity to express you.
                     </table>
 
 
-                    <p><a href="#Edit-Trainers-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getInfoToEdit()">Edit Info</a></p>
+                    <p><a href="#Edit-Coaches-info-pop" class="ui-btn ui-shadow ui-corner-all" onclick="getCoachesInfoToEdit()">Edit Info</a></p>
 
                 </td>
                 <td style="width:10%"></td>
@@ -620,7 +649,7 @@ Give us the opportunity to express you.
                         <input type="text" placeholder="Lestname" id="LastName">
                         <input type="text" placeholder="dayofwork(a-g)" id="DayOfWork">
                         <input type="text" placeholder="UserName" id="UserName">
-                        <button type="button" id="btn_insertCoaches" class="button" onclick="setCoaches()">Add Coach</button>
+                        <button type="button" id="btn_insertCoaches" class="button" onclick="AddCoaches()">Add Coach</button>
                     </form>
                 </td>
                 <td style="width:10%"></td>
