@@ -9,11 +9,12 @@
   <preference name="windows-target-version" value="8.1" />
   <!-- Support for Cordova 5.0.0 plugin system -->
   <plugin name="cordova-plugin-whitelist" version="1" />
+  <access origin="*" />
   <allow-intent href="*" />
   <allow-navigation href="*" />
   <allow-navigation href="http://*/*" />
   <platform name="android">
-    <allow-intent href="market:*" />
+    <allow-intent href="*" />
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*" />
@@ -103,10 +104,12 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280" />
   </platform>
   <preference name="AndroidLaunchMode" value="singleTop" />
-  <plugin name="cordova-plugin-device" version="1.1.6" />
   <plugin name="cordova-plugin-file-transfer" version="1.6.3" />
   <plugin name="cordova-plugin-network-information" version="1.3.3" />
   <plugin name="cordova-plugin-compat" version="1.1.0" />
   <plugin name="cordova-plugin-file" version="4.3.3" />
-  <access origin="http://yishai-001-site1.atempurl.com" />
+  <preference name="android-minSdkVersion" value="16" />
+  <preference name="android-maxSdkVersion" value="25" />
+  <plugin name="cordova-plugin-device" version="1.1.6" />
+  <plugin name="cordova-plugin-crosswalk-webview" version="2.1.0" />
 </widget>

@@ -11,7 +11,6 @@ function SetUserName() {
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/Members/" + UserName, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send("{\"Password\":\"" + Password  + "\"}");
-{  }
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("Alert-pop-Messege").innerText = this.response;
@@ -43,20 +42,19 @@ function verifyUserName() {
 
     var UserName = document.getElementById("UserName").value;
     var Password = document.getElementById("Password").value;
-    UserName += Flag;
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + UserName + "/" + Password, true);
 
-    xhttp.send();
+    var xhttp = new XMLHttpRequest();
+
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response == 'true') {
                 switch (Flag) {
                     case '1': {
-                        getTrainersInfo();
                         document.getElementById("Alert-pop-Messege").innerText = strVerify;
                         document.getElementById("nextFromAlert").href = "#Main-Trainers";
-                        window.location.href = "#Alert-pop";
+                        document.getElementById("nextFromAlert").onclick = "getTrainersInfo()";
+                        $.mobile.changePage("file:///android_asset/www/index.html#Alert-pop");
                         break;
                     }
                     case '2': {
@@ -70,6 +68,7 @@ function verifyUserName() {
                         getManagerInfo();
                         document.getElementById("Alert-pop-Messege").innerText = strVerify;
                         document.getElementById("nextFromAlert").href = "#Main-Manager";
+
                         window.location.href = "#Alert-pop";
                         break;
                     }
@@ -83,8 +82,10 @@ function verifyUserName() {
                 window.location.href = "#Alert-pop";
             }
         }
-    }
+    };
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + UserName + Flag + "/" + Password, false);
 
+    xhttp.send();
 
 }
 

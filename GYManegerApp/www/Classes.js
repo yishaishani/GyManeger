@@ -10,7 +10,6 @@
     xhttp.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/add", true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
-//{ UserName, StartTime, EndTime }
 xhttp.send("{\"UserName\":\"" + UserName + "\",\"StartTime\":\"" + StartTime + "\",\"EndTime\":\"" + EndTime + "\"}");
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -154,8 +153,7 @@ function SaveClass() {
             xhttp2.open("POST", "http://yishai-001-site1.atempurl.com/TrainersSchedule/add/" + TrainersUserName, true);
             xhttp2.setRequestHeader("Content-type", "application/json");
 
-//{ StartTime , EndTime , ID , UserName }
-            xhttp2.send("{\"StartTime\":\"" + StartTime + "\",\"EndTime\":\"" + EndTime + "\",\"ID\":\"" + ID + "\",\"UserName\":\"" + UserName + "\"}");
+            xhttp2.send("{\"StartTime\":\"" + StartTime + "\",\"EndTime\":\"" + EndTime + "\",\"ID\":\"" + ID + "\",\"UserName\":\"" + UserName + '2' + "\"}");
             xhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                 }
@@ -165,7 +163,6 @@ function SaveClass() {
             xhttp3.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/UpdateID", true);
             xhttp3.setRequestHeader("Content-type", "application/json");
 
-//{ TrainersUserName, ID }
             xhttp3.send("{\"TrainersUserName\":\"" + TrainersUserName   + "\",\"ID\":\"" + ID +  "\"}");
             xhttp3.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -192,7 +189,7 @@ function DeleteClass() {
             var xhttp3 = new XMLHttpRequest();
             xhttp3.open("POST", "http://yishai-001-site1.atempurl.com/CoachesSchedule/UpdateID", true);
             xhttp3.setRequestHeader("Content-type", "application/json");
-//{ TrainersUserName, ID }
+
             xhttp3.send("{\"TrainersUserName\":\"" + TrainersUserName  + "\",\"ID\":\"" + ID + "\"}");
             xhttp3.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {

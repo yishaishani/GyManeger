@@ -7,7 +7,7 @@ function getTrainersInfo() {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var obj = $.parseJSON(this.response)
+                var obj = this.response;
                 document.getElementById("FirstName-Trainers").innerText += obj.map(function (a) { return "  " + a.FirstName });
                 document.getElementById("LastName-Trainers").innerText += obj.map(function (a) { return "  " + a.LastName });
                 document.getElementById("Gender-Trainers").innerText += obj.map(function (a) { return "  " + a.Gender });
