@@ -6,7 +6,7 @@
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = $.parseJSON(this.response)
+            var obj = this.response;
             if (obj.map(function (a) { return a.Sunday })=="true")
                 document.getElementById("day1").innerText = 'V';
             if (obj.map(function (a) { return a.Monday }) == "true")
@@ -37,7 +37,7 @@ function getCoachesInfoToEdit()
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = $.parseJSON(this.response)
+            var obj = this.response;
             if (obj.map(function (a) { return a.Sunday }) == "true")
                 DayOfWork += "a";
             if (obj.map(function (a) { return a.Monday }) == "true")
@@ -140,7 +140,7 @@ function getCoaches() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.FirstName + "\n" })];
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("getCoaches").innerText += array[0][i];

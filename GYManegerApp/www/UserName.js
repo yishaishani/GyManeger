@@ -53,22 +53,21 @@ function verifyUserName() {
                     case '1': {
                         document.getElementById("Alert-pop-Messege").innerText = strVerify;
                         document.getElementById("nextFromAlert").href = "#Main-Trainers";
-                        document.getElementById("nextFromAlert").onclick = "getTrainersInfo()";
-                        $.mobile.changePage("file:///android_asset/www/index.html#Alert-pop");
+                        document.getElementById("nextFromAlert").onclick = getTrainersInfo;
+                        $.mobile.changePage("#Alert-pop");
                         break;
                     }
                     case '2': {
-                        getCoachesInfo();
                         document.getElementById("Alert-pop-Messege").innerText = strVerify;
                         document.getElementById("nextFromAlert").href = "#Main-Coaches";
+                        document.getElementById("nextFromAlert").onclick = getCoachesInfo;
                         window.location.href = "#Alert-pop";
                         break;
                     }
                     case '3': {
-                        getManagerInfo();
                         document.getElementById("Alert-pop-Messege").innerText = strVerify;
                         document.getElementById("nextFromAlert").href = "#Main-Manager";
-
+                        document.getElementById("nextFromAlert").onclick = getManagerInfo;
                         window.location.href = "#Alert-pop";
                         break;
                     }
@@ -83,10 +82,9 @@ function verifyUserName() {
             }
         }
     };
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + UserName + Flag + "/" + Password, false);
 
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/Members/" + UserName + Flag + "/" + Password, true);
     xhttp.send();
-
 }
 
 function FlagTrainersPage() {

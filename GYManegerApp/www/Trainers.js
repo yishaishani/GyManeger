@@ -28,7 +28,7 @@ function getInfoToEdit() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = $.parseJSON(this.response)
+            var obj = this.response;
             document.getElementById("Edit-FirstName").value = obj.map(function (a) { return a.FirstName });
             document.getElementById("Edit-LastName").value = obj.map(function (a) { return a.LastName });
             document.getElementById("Edit-Gender").value = obj.map(function (a) { return a.Gender });
@@ -129,7 +129,7 @@ function getAllTrainers() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.FirstName + "\n" })];
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("getTrainers").innerText += array[0][i];

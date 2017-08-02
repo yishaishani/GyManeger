@@ -7,7 +7,7 @@ function getManagerInfo() {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var obj = $.parseJSON(this.response)
+                var obj = this.response;
                 document.getElementById("FirstName-Manager").innerText += obj[0].FirstName;
                 document.getElementById("LastName-Manager").innerText += obj[0].LastName;
                 document.getElementById("Phone-Numbers-Manager").innerText += obj[0].PhoneNumber;
@@ -28,7 +28,7 @@ function getManagerInfoToEdit() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = $.parseJSON(this.response)
+            var obj = this.response;
             document.getElementById("Edit-Manager-FirstName").value = obj[0].FirstName;
             document.getElementById("Edit-Manager-LastName").value = obj[0].LastName;
             document.getElementById("Edit-Manager-PhoneNumber").value = obj[0].PhoneNumber;
@@ -121,7 +121,7 @@ function getAllManager() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.FirstName + "\n" })];
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("getManager").innerText += array[0][i];

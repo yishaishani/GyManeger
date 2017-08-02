@@ -34,7 +34,7 @@ function getAllCoachesSchedule() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.StartTime + "\n\n" })];
             var array2 = [obj.map(function (a) { return a.TranierUserName + "  \n\n" })];
             var array3 = [obj.map(function (a) { return a.ID + "  \n\n" })];
@@ -60,7 +60,7 @@ function AddTrainersClasses() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.UserName + ":    \n\n" })];
             var array1 = [obj.map(function (a) { return a.StartTime + "    \n\n" })];
             var array2 = [obj.map(function (a) { return a.ID + "\n\n" })];
@@ -93,7 +93,7 @@ function getAllTrainersSchedule() {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var obj = JSON.parse(this.response);
+                var obj = this.response;
                 var array = [obj.map(function (a) { return a.StartTime + "\n\n" })];
                 var array2 = [obj.map(function (a) { return a.UserName + ":  \n\n" })];
                 var array3 = [obj.map(function (a) { return a.ID + "    \n\n" })];
@@ -119,7 +119,7 @@ function getCoachesForClasses() {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var obj = JSON.parse(this.response);
+                var obj = this.response;
                 var array = [obj.map(function (a) { return a.FirstName + "\n" })];
                 var array1 = [obj.map(function (a) { return a.UserName + "\n" })];
                 for (i = 0; i < array[0].length; i++) {
@@ -142,7 +142,7 @@ function SaveClass() {
     xhttp.responseType = "json";
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var StartTime = obj[0].StartTime;
             var EndTime = obj[0].EndTime;
             var UserName = obj[0].UserName;

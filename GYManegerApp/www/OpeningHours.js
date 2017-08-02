@@ -4,8 +4,7 @@ function GetOpening() {
         {
     var xhttp = new XMLHttpRequest();
     xhttp.responseType = "json";
-    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/OpeningHours/all", true);
-    xhttp.send();
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = this.response;
@@ -14,17 +13,17 @@ function GetOpening() {
             for (i = 0; i < array[0].length; i++) {
                 document.getElementById("dayHours").innerText += array[0][i];
                 document.getElementById("openingHours").innerText += array1[0][i];
-                FlagOpen = 1;
             }
+            FlagOpen = 1;
         }
-        else
-            
+        else    
         {
             var t = 1;
         }
     };
 
-
+    xhttp.open("GET", "http://yishai-001-site1.atempurl.com/OpeningHours/all", true);
+    xhttp.send();
 }
 }
 
@@ -35,7 +34,7 @@ function getOpeningHours() {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.response);
+            var obj = this.response;
             var array = [obj.map(function (a) { return a.HOURS + "\n" })];
             document.getElementById("Edit-sunday").value = array[0][0];
             document.getElementById("Edit-monday").value = array[0][1];
